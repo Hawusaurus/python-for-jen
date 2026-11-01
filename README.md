@@ -1,25 +1,28 @@
-# Python for Jen ☂️
+# Python for Jen 👑
 
-> **Brightwell Umbrellas Ltd**: keeping Britain dry since 1952.
-> Payroll since 2009: one VBA macro called **MACRO-9000**.
+> **The Royal Treasury of Thornmere**: counting the realm's coin since the year 1019.
+> Wages reckoned, for the last three hundred years, by the **Grimoire of Dalvric**.
 
-You've just joined Brightwell as People Analytics Lead. The pay gap report
-is due, the payroll macro crashes every other Monday, and the person who
-wrote it (Dave) left in 2019 to live on a narrowboat.
+You are the new **Keeper of the Ledger**. The Grimoire is 4,000 lines of
+incantations left by a court wizard who sailed west and never came back. It
+fails every full moon, nobody dares touch it, and Queen Aldara has signed the
+**Accord of Equal Coin**: by Midsummer, the Treasury must report the pay gap
+between the women and men of the realm. Properly. In a sentence a queen can
+say out loud.
 
-Your mission: learn Python, one lesson at a time, and **retire MACRO-9000**
-by building the gender pay gap report yourself, with NumPy and pandas.
+Your quest: learn Python, one lesson at a time, and **close the Grimoire** by
+building that report yourself, with NumPy and pandas.
 
-## The cast
+## The court
 
 | | |
 |---|---|
-| **Gerald** | Managing Director. Grandson of the founder. Sends requests at 16:55 on Fridays. |
-| **Priya** | Payroll. Sharp, busy, sends tickets. |
-| **Mo** | IT. Has seen things. |
-| **Siobhan** | Reward & Benefits. Needs yes/no answers. |
-| **Dave** | Left in 2019. Left behind MACRO-9000 and lots of broken code. |
-| **Biscuit** | Office beagle. Not allowed near the keyboard. Often near the keyboard. |
+| **Queen Aldara** | Sends decrees at dusk on the last day of the week. "No pressure. (Some pressure.)" |
+| **Mistress Pell** | Paymaster of the Guilds. Sharp, busy, sends most of the ravens. |
+| **Orrin of the Clockworks** | Keeps the realm's machines running. Has seen things. |
+| **Lady Siv of the Rewards** | Wants yes or no, never "mayhap". |
+| **Dalvric the Vanished** | Court wizard, left in 1019. His torn pages turn up in every lesson, always broken. |
+| **Biscuit** | A small kitchen dragon. Not allowed near the abacus. Often near the abacus. |
 
 ## How a lesson works
 
@@ -39,27 +42,27 @@ Each lesson folder contains:
 | `EXERCISES.pdf` | The exercise sheet (~1 hour). What to write, and the output to expect |
 | `CHEATSHEET.pdf` | Everything from the lesson on one page. Keep it open while working |
 | `my_work/` | Your files. You write every one of them yourself |
-| `bughunt/` | Dave's Leftovers: broken code to fix (~15 min) |
+| `bughunt/` | Pages from the Grimoire: Dalvric's broken code, for you to fix (~15 min) |
 | `LECTURE.md`, `demo.py` | What Lars shows you at the start (~15 min) |
 
 Run your files with `python my_work/<file>.py` and compare with the expected
 output on the sheet. When you're done: commit, push, and open a pull request.
-Lars reviews it, and you get the badge. 🏅
+Lars reviews it, and you earn the lesson's rune.
 
-## Lessons
+## The quest
 
-| # | Mission | Python topics | Badge |
+| # | Lesson | Python topics | Rune |
 |---|---|---|---|
-| 00 | Day One at Brightwell | setup, VS Code, Git, GitHub | Keycard Issued |
-| 01 | Priya's Inbox | numbers, text, types, f-strings | Number Wrangler |
-| 02 | The Bonus Run | `if`, `for`, `while` | Decision Maker |
-| 03 | Dave's Spaghetti | functions | Function Forger |
-| 04 | The Staff List | lists and dictionaries | List Keeper |
-| 05 | The Export | strings, files, reading a CSV | File Reader |
-| 06 | Monday Morning | errors, tracebacks, `try`/`except`, debugging | Bug Whisperer |
-| 07 | The Toolbox | modules, the standard library, venv, pip | Toolsmith |
-| 08 | Whole Columns at Once | NumPy | Vectoriser |
-| 09 | The Spreadsheet That Isn't | pandas I: DataFrames, filtering, Excel in and out | Frame Builder |
-| 10 | Pivot Season | pandas II: groupby, pivot tables, merge | Pivot Master |
-| 11 | Show Gerald | charts, formatted Excel workbooks | Chart Topper |
-| 12 | Retire MACRO-9000 | the gender pay gap report (two sessions) | MACRO-9000 Retired |
+| 00 | The Keeper's Oath | setup, VS Code, Git, GitHub | Rune of the Gate |
+| 01 | Mistress Pell's Ravens | numbers, text, types, f-strings | Rune of Coin |
+| 02 | The Midwinter Bonus | `if`, `for`, `while` | Rune of Choice |
+| 03 | Dalvric's Tangle | functions | Rune of Craft |
+| 04 | The Roll of the Realm | lists and dictionaries | Rune of the Roll |
+| 05 | The Scriptorium Scroll | strings, files, reading a CSV | Rune of the Scroll |
+| 06 | The Full Moon | errors, tracebacks, `try`/`except`, debugging | Rune of the Moon |
+| 07 | The Armoury | modules, the standard library, venv, pip | Rune of the Forge |
+| 08 | A Thousand Coins at Once | NumPy | Rune of the Legion |
+| 09 | The Living Ledger | pandas I: DataFrames, filtering, Excel in and out | Rune of the Ledger |
+| 10 | The Council of Guilds | pandas II: groupby, pivot tables, merge | Rune of Council |
+| 11 | Before the Throne | charts, formatted Excel workbooks | Rune of the Throne |
+| 12 | The Grimoire Closes | the Accord of Equal Coin report (two sessions) | The Keeper's Seal |
