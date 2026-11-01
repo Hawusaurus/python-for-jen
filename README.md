@@ -1,61 +1,65 @@
-# Python for Jen
+# Python for Jen ☂️
 
-A hands-on Python course for someone who already knows Excel and VBA.
-By the end you'll be able to replace a typical spreadsheet workflow with a
-Python script, and we'll finish with a **gender pay gap report** built with
-NumPy and pandas.
+> **Brightwell Umbrellas Ltd**: keeping Britain dry since 1952.
+> Payroll since 2009: one VBA macro called **MACRO-9000**.
 
-## How every lesson works
+You've just joined Brightwell as People Analytics Lead. The pay gap report
+is due, the payroll macro crashes every other Monday, and the person who
+wrote it (Dave) left in 2019 to live on a narrowboat.
 
-Each lesson lives on its own git branch (`lesson-01`, `lesson-02`, …) and has
-the same parts:
+Your mission: learn Python, one lesson at a time, and **retire MACRO-9000**
+by building the gender pay gap report yourself, with NumPy and pandas.
 
-| Part | Where | Time |
-|---|---|---|
-| Lecture | `LECTURE.md` + `demo.py` (Lars walks you through it) | ~15 min |
-| Exercises | `exercises/` | ~1 h, on your own |
-| Bug hunt | `bughunt/` | ~15 min |
+## The cast
 
-Your routine for each lesson:
+| | |
+|---|---|
+| **Gerald** | Managing Director. Grandson of the founder. Sends requests at 16:55 on Fridays. |
+| **Priya** | Payroll. Sharp, busy, sends tickets. |
+| **Mo** | IT. Has seen things. |
+| **Siobhan** | Reward & Benefits. Needs yes/no answers. |
+| **Dave** | Left in 2019. Left behind MACRO-9000 and lots of broken code. |
+| **Biscuit** | Office beagle. Not allowed near the keyboard. Often near the keyboard. |
+
+## How a lesson works
+
+**Every lesson is its own folder on its own branch.** Lessons don't depend
+on each other.
 
 ```bash
-git checkout lesson-01              # switch to the lesson branch
-git pull                            # get the newest version
-pytest lessons/01-values-and-types  # see what's still red
-# ... work on the exercises until everything is green ...
-git add .
-git commit -m "Lesson 01: exercises done"
-git push
+git checkout lesson-01            # switch to the lesson
+cd lessons/01-values-and-types    # always work inside the lesson folder
 ```
 
-Then open a **pull request** on GitHub from `lesson-01` into `main`.
-Lars reviews it, comments, and merges it.
+Each lesson folder contains:
 
-## The tests are your answer key
+| | |
+|---|---|
+| `GUIDE.pdf` | **Start here.** The story, what you'll learn, and what "done" looks like |
+| `EXERCISES.pdf` | The exercise sheet (~1 hour). What to write, and the output to expect |
+| `CHEATSHEET.pdf` | Everything from the lesson on one page. Keep it open while working |
+| `my_work/` | Your files. You write every one of them yourself |
+| `bughunt/` | Dave's Leftovers: broken code to fix (~15 min) |
+| `LECTURE.md`, `demo.py` | What Lars shows you at the start (~15 min) |
 
-Every exercise has tests. Run `pytest` on the lesson folder:
-
-- **PASSED** (green): done, move on.
-- **FAILED** (red): read the message. It tells you what your code returned
-  and what was expected.
-
-You are finished with a lesson when everything is green. Don't change the
-test files. If you think a test is wrong, say so in the pull request.
+Run your files with `python my_work/<file>.py` and compare with the expected
+output on the sheet. When you're done: commit, push, and open a pull request.
+Lars reviews it, and you get the badge. 🏅
 
 ## Lessons
 
-| # | Topic | You know this from Excel/VBA as… |
-|---|---|---|
-| 00 | Setup: Python, VS Code, Git, GitHub | — |
-| 01 | Values, types, variables, f-strings | `Dim`, number formats, `&` |
-| 02 | Decisions and loops: `if`, `for`, `while` | `If`, `For Each` |
-| 03 | Functions and testing | `Sub` / `Function` |
-| 04 | Lists and dictionaries | arrays, `Scripting.Dictionary` |
-| 05 | Strings and files: reading a CSV yourself | text functions, `Open … For Input` |
-| 06 | Errors and debugging | `On Error`, the debugger |
-| 07 | Modules, pip, virtual environments | add-ins |
-| 08 | NumPy: whole columns at once | dragging a formula down |
-| 09 | pandas I: DataFrames, filtering | AutoFilter |
-| 10 | pandas II: groupby, pivot tables, merge | PivotTables, XLOOKUP |
-| 11 | Charts and writing Excel files | charts |
-| 12–13 | Project: gender pay gap report | the whole macro |
+| # | Mission | Python topics | Badge |
+|---|---|---|---|
+| 00 | Day One at Brightwell | setup, VS Code, Git, GitHub | Keycard Issued |
+| 01 | Priya's Inbox | numbers, text, types, f-strings | Number Wrangler |
+| 02 | The Bonus Run | `if`, `for`, `while` | Decision Maker |
+| 03 | Dave's Spaghetti | functions | Function Forger |
+| 04 | The Staff List | lists and dictionaries | List Keeper |
+| 05 | The Export | strings, files, reading a CSV | File Reader |
+| 06 | Monday Morning | errors, tracebacks, `try`/`except`, debugging | Bug Whisperer |
+| 07 | The Toolbox | modules, the standard library, venv, pip | Toolsmith |
+| 08 | Whole Columns at Once | NumPy | Vectoriser |
+| 09 | The Spreadsheet That Isn't | pandas I: DataFrames, filtering, Excel in and out | Frame Builder |
+| 10 | Pivot Season | pandas II: groupby, pivot tables, merge | Pivot Master |
+| 11 | Show Gerald | charts, formatted Excel workbooks | Chart Topper |
+| 12 | Retire MACRO-9000 | the gender pay gap report (two sessions) | MACRO-9000 Retired |

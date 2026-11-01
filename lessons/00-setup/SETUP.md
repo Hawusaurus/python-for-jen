@@ -66,40 +66,23 @@ In VS Code, press **Ctrl+Shift+P**, type **Git: Clone**, and paste the
 repository URL Lars gives you. Pick a folder, for example `Documents`.
 Sign in to GitHub when asked. When VS Code asks, open the cloned folder.
 
-## 6. Create a virtual environment
-
-A *virtual environment* is a private toolbox for this project, so packages
-you install here don't mess with anything else on your computer.
-
-In VS Code, open the terminal (**Terminal → New Terminal**) and run:
+Now switch to the lesson 00 branch. Open the terminal (**Terminal → New
+Terminal**) and run:
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
+git checkout lesson-00
 ```
 
-Your prompt now starts with `(.venv)`. **You need to activate it every time
-you open a new terminal.** VS Code usually does this for you.
+Bottom left in VS Code it should now say `lesson-00` instead of `main`.
+You only see the `lessons` folder after this step.
 
-If you get an error about "running scripts is disabled", run this once,
-then try the activate command again:
+## 6. Start lesson 00
+
+Every lesson lives in its own folder, and you always work *inside* it:
 
 ```bash
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+cd lessons/00-setup
 ```
 
-Install the course packages:
-
-```bash
-pip install -r requirements.txt
-```
-
-## 7. Check that everything works
-
-```bash
-pytest lessons/00-setup
-```
-
-You'll see red ERROR / FAILED lines. **That's expected.** If it says
-"pytest is not recognized", the virtual environment isn't active (step 6).
-Fixing the red is the lesson 00 exercise. Go to `exercises/README.md`.
+Open `GUIDE.pdf` in that folder. That's where the story starts.
+Then work through `EXERCISES.pdf`, with `CHEATSHEET.pdf` next to you.

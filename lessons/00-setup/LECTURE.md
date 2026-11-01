@@ -6,6 +6,15 @@ workflow for the whole course. Do this lecture **after** she has finished
 
 ---
 
+## [Opener, 1 min] Welcome to Brightwell
+
+Open `GUIDE.pdf` and read the mission briefing out loud. Jen is the new People
+Analytics Lead at **Brightwell Umbrellas Ltd** ("Keeping Britain dry since 1952").
+Introduce the cast: Gerald (MD, sends requests at 4:55 pm on Fridays),
+Priya (Payroll, sends tickets), Dave (left in 2019, left behind MACRO-9000
+and a lot of broken code), and Biscuit (office beagle).
+The course goal is to retire MACRO-9000 before pay gap reporting day.
+
 ## [0–3 min] Python vs VBA: where does the code live?
 
 - VBA lives *inside* the workbook. It can't exist without Excel.
@@ -54,10 +63,14 @@ lesson-01   ●──●──●──●
 ## [12–15 min] How every lesson will work
 
 - Lecture (like this), then about an hour of exercises alone, then a bug hunt.
-- **The tests are the answer key.** Run `pytest lessons/00-setup` and show
-  red vs green. Show how to read a failure: "expected X, got Y".
-- Show `GIT_CHEATSHEET.md`.
-- Hand over to `exercises/README.md`.
+- Every lesson has three PDFs: `GUIDE.pdf` (story and goals), `EXERCISES.pdf`
+  (the sheet) and `CHEATSHEET.pdf`. Show all three.
+- She writes **every** file herself in `my_work/` and checks it against the
+  expected output on the sheet. No templates, no autograder.
+- Show how to read an error: last line first (what), then the line number (where).
+- Every lesson lives in its own folder on its own branch, and lessons don't depend
+  on each other.
+- Hand over to `EXERCISES.pdf`.
 
 ---
 

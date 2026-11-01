@@ -1,0 +1,8 @@
+department,cost_centre,site_manager,budget
+Production,CC-100,Owen Jones,1750000
+Warehouse,CC-110,Will Smith,700000
+Sales,CC-200,Tom Robinson,1150000
+Finance,CC-300,Lucy Thompson,540000
+HR,CC-310,Harry Walker,400000
+IT,CC-400,Nathan Smith,780000
+Marketing,CC-500,Sam O'Brien,500000
