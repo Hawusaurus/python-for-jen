@@ -2,7 +2,7 @@
 #  PAGES FROM THE GRIMOIRE, PAGE 0: "welcome_v2_FINAL_final.py"
 # ==================================================================
 #
-# Found in a locked drawer of the Treasury labelled  DALVRIC - DO NOT OPEN
+# Found in a locked drawer of the Guild Hall labelled  DALVRIC - DO NOT OPEN
 # Dalvric wrote this welcome script the week before he sailed west to
 # "find himself beyond the sea". It has never run. Not once.
 #
@@ -14,13 +14,13 @@
 #
 # When it's fixed, it prints EXACTLY this:
 #
-#   Hello, Jen! Welcome to Thornmere.
+#   Hello, Jen! Welcome to the Guild.
 #   jen@thornmere.realm
 #   TEA TIME
 
 
 def greeting(name)
-    return "Hello, " + name + "! Welcome to Thornmere."
+    return "Hello, " + name + "! Welcome to the Guild."
 
 
 def raven_address(username):

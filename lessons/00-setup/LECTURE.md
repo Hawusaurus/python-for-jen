@@ -6,16 +6,18 @@ workflow for the whole course. Do this lecture **after** she has finished
 
 ---
 
-## [Opener, 1 min] Welcome to Thornmere
+## [Opener, 1 min] The Guild Hall door
 
 Open `GUIDE.pdf` and read the Queen's decree out loud. Jen is the new Keeper
-of the Ledger at the **Royal Treasury of Thornmere** ("counting the realm's
-coin since the year 1019"). Introduce the court: Queen Aldara (decrees at dusk
-on the last day of the week), Mistress Pell (Paymaster, sends ravens), Orrin of
-the Clockworks, Lady Siv of the Rewards, Dalvric the Vanished (court wizard,
-sailed west, left behind the Grimoire and a lot of broken code), and Biscuit
-(a small kitchen dragon). The course goal is to close the Grimoire before the
-Accord of Equal Coin report is due at Midsummer.
+of the Guild Ledger at the **Adventurers' Guild of Thornmere** (sending heroes
+after goblins, trolls and the occasional Wyrm for three hundred years).
+Introduce the guild: Queen Aldara (decrees at dusk on the last day of the
+week), Pell the Quartermistress (stores and accounts, sends most of the ravens),
+Orrin of the Clockworks, Captain Siv (quest master, wants yes or no), Dalvric
+the Vanished (court wizard, sailed west in 1019, left behind the Grimoire and
+a lot of broken code), and Biscuit (a small kitchen dragon). The course goal:
+close the Grimoire and show the Queen which quests are worth the crowns, so
+she renews the guild's Royal Charter at Midsummer.
 
 ## [0–3 min] Python vs VBA: where does the code live?
 
@@ -33,7 +35,7 @@ Accord of Equal Coin report is due at Midsummer.
    answers back, like the VBA Immediate window (Ctrl+G).
    ```python
    >>> 2 + 3
-   >>> 35000 / 12
+   >>> 1000 / 3
    >>> "Jen" * 3
    >>> exit()
    ```
