@@ -1,34 +1,33 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 05 · RIDDLE 4: "The Ledger That Forgot"
+#  THE GRIMOIRE'S RIDDLES · LESSON 05 · RIDDLE 4: "The Scroll That Forgot"
 # ==================================================================
 #
-#    Three guilds I wrote, three lines of gold,
-#    but only one the scroll would hold.
-#    Each time I opened it anew,
-#    I wiped the page and started through.
+#    Five regions' tallies, line by line,
+#    I wrote them down, and all looked fine;
+#    but each new start wiped clean the last,
+#    and only one line held on fast.
 #
-#  Guild totals for the Queen, written to a file and read back. Two
-#  of the three guilds have vanished.
+#  The Queen wants the quest count per region on a scroll she can
+#  read at dusk. The page writes it, then reads it back.
 #
 #  Run:  python bughunt/riddles/riddle_4_forgetful.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Forge: 1,680,500 cr
-#    Guard: 1,121,450 cr
-#    Library: 489,300 cr
-#    Lines on the scroll: 3
-#    Grand total: 3,291,250 cr
+#    Greyfen: 68 quests
+#    Ironhills: 85 quests
+#    Northern Wilds: 75 quests
+#    Saltmarsh: 82 quests
+#    Thornwood: 90 quests
+import csv
 
-totals = {"Forge": 1680500, "Guard": 1121450, "Library": 489300}
+counts = {}
+with open("data/quests.csv", newline="", encoding="utf-8") as f:
+    for row in csv.DictReader(f):
+        counts[row["region"]] = counts.get(row["region"], 0) + 1
 
-for guild, total in totals.items():
-    with open("my_work/riddle_guild_totals.txt", "w", encoding="utf-8") as f:
-        f.write(f"{guild}: {total:,} cr\n")
+for region in sorted(counts):
+    with open("my_work/riddle_region_counts.txt", "w", encoding="utf-8") as out:
+        out.write(f"{region}: {counts[region]} quests\n")
 
-with open("my_work/riddle_guild_totals.txt", encoding="utf-8") as f:
-    lines = f.readlines()
-
-for line in lines:
-    print(line.strip())
-print("Lines on the scroll:", len(lines))
-print(f"Grand total: {sum(totals.values()):,} cr")
+with open("my_work/riddle_region_counts.txt", encoding="utf-8") as f:
+    print(f.read(), end="")

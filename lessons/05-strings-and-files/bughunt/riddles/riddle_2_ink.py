@@ -2,31 +2,31 @@
 #  THE GRIMOIRE'S RIDDLES · LESSON 05 · RIDDLE 2: "The Scroll That Would Not Take Ink"
 # ==================================================================
 #
-#    I opened the scroll to add a line,
-#    but held it as if to read, not sign.
-#    A page you open just to look
-#    won't let you write into the book.
+#    I took the scroll to set down lines,
+#    but held it as one reads the signs.
+#    A reader's grip lets nothing in:
+#    no quill, no ink, no word within.
 #
-#  Orrin's notice board: write three notices to a file, then read
-#  them back with numbers.
+#  Quartermistress Pell's packing list for the Ironhills party. The
+#  page should write it to a file, then read it back to check.
 #
 #  Run:  python bughunt/riddles/riddle_2_ink.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    1. Raven post closes at dusk.
-#    2. Guild dues are due on the first.
-#    3. Biscuit is not to be fed crowns.
+#    rope (2)
+#    torches (6)
+#    rations (12)
+#    Lines written: 3
 
-notices = ["Raven post closes at dusk.",
-           "Guild dues are due on the first.",
-           "Biscuit is not to be fed crowns."]
+kit = {"rope": 2, "torches": 6, "rations": 12}
 
-with open("my_work/notices.txt", "r", encoding="utf-8") as f:
-    for line in notices:
-        f.write(line + "\n")
+with open("my_work/riddle_kit_list.txt", "r", encoding="utf-8") as f:
+    for item, number in kit.items():
+        f.write(f"{item} ({number})\n")
 
-number = 1
-with open("my_work/notices.txt", encoding="utf-8") as f:
-    for line in f:
-        print(f"{number}. {line.strip()}")
-        number += 1
+with open("my_work/riddle_kit_list.txt", encoding="utf-8") as f:
+    lines = f.read().splitlines()
+
+for line in lines:
+    print(line)
+print("Lines written:", len(lines))
