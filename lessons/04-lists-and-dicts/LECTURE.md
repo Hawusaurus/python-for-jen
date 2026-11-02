@@ -77,6 +77,8 @@ for person in staff:
 
 ## [12–15 min] Handover
 
+Mention `bughunt/riddles/`: five optional one-bug riddles (the last has two) for fast finishers or homework.
+
 Open `EXERCISES.pdf`. Do exercise 1 (a) in the REPL together. Point out the
 f-string quoting rule (`f"{person['name']}"`) because it will bite her in
 exercise 4. Leave her with `CHEATSHEET.pdf` open.

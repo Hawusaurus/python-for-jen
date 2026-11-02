@@ -88,6 +88,8 @@ wb.save(path)
   `1F3A5F`. She *will* hit this.
 - Reopen the workbook, show the result. Hand over to `EXERCISES.pdf` and
   `CHEATSHEET.pdf`. Remind her: `pip install -r requirements.txt` first.
+- Five optional riddles wait in `bughunt/riddles/` (one bug each, the last has two;
+  solutions in `instructor/solutions/11-charts-and-excel/riddles/`).
 
 ---
 

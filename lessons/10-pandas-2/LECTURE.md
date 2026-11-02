@@ -82,7 +82,8 @@ Add `gap_pct = (M - F) / M * 100`, sort it, and the Kitchens are at the
 top at 45 %. Pause on that: a guild that is mostly women, with the gap
 driven by the few men at the top. It's the kind of thing the report exists
 to surface, and it's not what anyone guesses first. Then open `EXERCISES.pdf`, do Exercise 1 (a)
-together, and leave her to it with `CHEATSHEET.pdf`.
+together, and leave her to it with `CHEATSHEET.pdf`. Fast finishers: five extra riddles
+in `bughunt/riddles/` (pivot defaults, `fillna` not kept, quartile labels; solutions in `instructor/solutions/10-pandas-2/riddles/`).
 
 ---
 

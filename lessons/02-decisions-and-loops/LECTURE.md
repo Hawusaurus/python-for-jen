@@ -93,6 +93,7 @@ print(years)
 Open `EXERCISES.pdf`. Do the first line of exercise 1 live: create
 `my_work/ex1_bonus_rule.py`, type the Given lines, type `if months_of_service < 12:`
 and the colon. Leave her to it with `CHEATSHEET.pdf` open.
+After the bug hunt: five optional riddles in `bughunt/riddles/` (one bug each, the last has two). Answers in `instructor/solutions/02-decisions-and-loops/riddles/`.
 
 ---
 

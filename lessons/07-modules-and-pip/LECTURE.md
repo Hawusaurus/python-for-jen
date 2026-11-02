@@ -88,7 +88,8 @@ help(paytools)
 Open `EXERCISES.pdf`. Exercise 1 is the venv, in the terminal, no file. Make
 sure the `(.venv)` prompt shows before she moves on. Exercise 6 is a package
 she's never seen (`rich`): the exercise is reading documentation, so don't
-explain it.
+explain it. Fast finishers: five optional riddles in `bughunt/riddles/`, one bug
+each (the last has two); answers in `instructor/solutions/07-modules-and-pip/riddles/`.
 
 ---
 

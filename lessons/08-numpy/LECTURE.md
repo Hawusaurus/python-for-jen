@@ -89,7 +89,8 @@ f = hourly[genders == "F"].mean()
 
 That's the mean gender pay gap for all 200 employees. Exercise 4 does it
 with median too; Exercise 5 does quartiles. Open `EXERCISES.pdf`, do the
-loader from Exercise 1 together, then leave her to it with `CHEATSHEET.pdf`.
+loader from Exercise 1 together, then leave her to it with `CHEATSHEET.pdf`. Fast finishers: five optional riddles in
+`bughunt/riddles/`, one bug each (the last has two); answers in `instructor/solutions/08-numpy/riddles/`.
 
 ---
 

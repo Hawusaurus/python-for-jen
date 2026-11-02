@@ -111,6 +111,7 @@ True and False, True or False, not True
 **Handover:** open `EXERCISES.pdf` together and do the first line of
 Exercise 1 live: create `my_work/ex1_pay_maths.py`, type the Given lines,
 add one `print`, run it. Then leave her to it, with `CHEATSHEET.pdf` open.
+After the bug hunt: five optional riddles in `bughunt/riddles/` (one bug each, the last has two). Answers in `instructor/solutions/01-values-and-types/riddles/`.
 
 ---
 
