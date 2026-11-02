@@ -1,27 +1,30 @@
-# Lesson 09: pandas I, the living ledger (lecture notes for Lars)
+# Lesson 09: The Living Ledger — pandas I (lecture notes for Lars)
 
-**Goal:** Jen opens the Roll as a DataFrame and does Mistress Pell's monthly
-routine (filter, sort, helper columns, save) in a handful of lines. She
-should leave knowing DataFrame = sheet, Series = column, index = row label,
-and that masks work exactly as in NumPy.
+**Goal:** Jen opens the quest ledger as a DataFrame and does the
+Quartermistress's monthly routine (filter, sort, helper columns, save) in a
+handful of lines. She should leave knowing DataFrame = sheet, Series = column,
+index = row label, and that masks work exactly as in NumPy.
 
 `pip install -r requirements.txt` together first (pandas + openpyxl).
-Run `demo.py` section by section; typing it live is better.
+Run `demo.py` section by section; typing it live is better. Data:
+`data/quests.csv` (400 quests), `data/heroes.csv` (120 heroes) and
+`data/guild_ledger.xlsx` (sheets "Quests" and "Notes").
 
 ---
 
 ## [Opener, 1 min] The 14 tabs
 
-Read Mistress Pell's raven from `GUIDE.pdf`. The Treasury workbook has 14 tabs,
-including "Dalvric working" (locked, password lost at sea). Today Mistress
-Pell's monthly routine becomes a script, and the workbook stays untouched.
+Read Pell's raven from `GUIDE.pdf`. The old ledger workbook has 14 tabs,
+including "Dalvric working" (locked, password lost at sea). Today the
+Quartermistress's monthly routine becomes a script, and the workbook stays
+untouched.
 
 ## [0–3 min] Open it and look
 
 ```python
 import pandas as pd
-df = pd.read_csv("data/thornmere_payroll.csv")
-df.shape          # (200, 12)
+df = pd.read_csv("data/quests.csv")
+df.shape          # (400, 12)
 df.head()
 df.columns
 df.info()         # types and missing values
@@ -35,10 +38,10 @@ df.describe()     # the Excel "Data Analysis" summary, free
 ## [3–6 min] Columns
 
 ```python
-df["annual_salary"]              # a Series: a column with a name and index
-df["annual_salary"].mean()
-df[["first_name", "annual_salary"]]   # two columns: list inside brackets
-df["hourly"] = df["annual_salary"] / 52 / df["weekly_hours"]
+df["reward"]                     # a Series: a column with a name and index
+df["reward"].mean()
+df[["quest_id", "reward"]]       # two columns: list inside brackets
+df["per_day"] = df["paid"] / df["days"]
 ```
 
 - Make the `df["a", "b"]` mistake live, read the error, fix with `[[...]]`.
@@ -48,10 +51,10 @@ df["hourly"] = df["annual_salary"] / 52 / df["weekly_hours"]
 ## [6–10 min] AutoFilter
 
 ```python
-df[df["annual_salary"] > 40000]
-df[(df["department"] == "Guard") & (df["weekly_hours"] < 37.5)]
-df[df["location"].isin(["Westmarch", "Harbourtown"])]
-df[df["job_title"].str.contains("Warden")]
+df[df["reward"] > 1000]
+df[(df["region"] == "Northern Wilds") & (df["outcome"] == "Failed")]
+df[df["region"].isin(["Greyfen", "Saltmarsh"])]
+df[df["title"].str.contains("old mill")]
 len(df[mask])                    # COUNTIFS
 ```
 
@@ -61,29 +64,30 @@ len(df[mask])                    # COUNTIFS
 ## [10–13 min] Sort, save, Excel
 
 ```python
-df.sort_values("hourly", ascending=False).head()
-df.sort_values(["department", "hourly"], ascending=[True, False])
-df.nlargest(5, "hourly")
+df.sort_values("per_day", ascending=False).head()
+df.sort_values(["region", "reward"], ascending=[True, False])
+df.nlargest(5, "per_day")
 df[mask].to_csv("my_work/out.csv", index=False)
-pd.read_excel("data/payroll.xlsx", sheet_name="Payroll")
+pd.read_excel("data/guild_ledger.xlsx", sheet_name="Quests")
 ```
 
 - `sort_values` returns a *copy*; `df` is unchanged. Show it.
 - `index=False`: forget it once and show the "Unnamed: 0" column.
-- Open `data/payroll.xlsx` in Excel next to the DataFrame: same thing.
+- Open `data/guild_ledger.xlsx` in Excel next to the DataFrame: same thing.
 
-## [13–15 min] Mistress Pell's month in five lines, and handover
+## [13–15 min] The Quartermistress's month in five lines, and handover
 
 ```python
-df = pd.read_csv("data/thornmere_payroll.csv")
-df["hourly"] = (df["annual_salary"] / 52 / df["weekly_hours"]).round(2)
-part = df[df["weekly_hours"] < 37.5]
-part = part.sort_values("department")
-part.to_csv("my_work/part_timers.csv", index=False)
+df = pd.read_csv("data/quests.csv")
+df["per_day"] = (df["paid"] / df["days"]).round(2)
+fled = df[df["outcome"] == "Fled"]
+fled = fled.sort_values("region")
+fled.to_csv("my_work/fled.csv", index=False)
 ```
 
 "That's a tab she makes by hand every month." Open `EXERCISES.pdf`, type the
-opener together, then leave her to it with `CHEATSHEET.pdf`. Fast finishers: five optional
+opener together, then leave her to it with `CHEATSHEET.pdf`. The bug hunt is
+`bughunt/ironhills_bug.py` (Grimoire, page 9). Fast finishers: five optional
 riddles in `bughunt/riddles/`, one bug each (the last has two); answers in
 `instructor/solutions/09-pandas-1/riddles/`.
 
