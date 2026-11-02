@@ -9,18 +9,18 @@
 # THREE bugs:
 #   one crashes (read the error message!),
 #   one makes a function hand back nothing at all,
-#   one is a default value that quietly changes what everyone is paid.
+#   one is a default value that quietly takes the whole reward.
 #
 # Run it from inside the lesson folder:
-#   python bughunt/spaghetti_bug.py
+#   python bughunt/tangle_bug.py
 #
 # When it's fixed, it prints EXACTLY this:
 #
-#   2,708.33 cr
-#   Pension at 5%: 135.42 cr
-#   Pension at 8%: 216.67 cr
-#   Basic pay       2,708.33 cr
-#   Pension           135.42 cr
+#   4,860.00 cr
+#   Guild cut at 10%: 486.00 cr
+#   Guild cut at 5%: 243.00 cr
+#   Reward          4,860.00 cr
+#   Guild cut         486.00 cr
 #
 # Fix ONE bug per commit and explain it in the message, like a detective:
 #   git commit -m "Bug hunt: <what was wrong and why>"
@@ -31,18 +31,18 @@ def money(amount):
     text = f"{amount:,.2f} cr"
 
 
-def pension(basic, rate=0.5):
-    """Monthly pension deduction."""
-    return basic * rate
+def guild_cut(reward, rate=1.0):
+    """The guild's cut of a reward. The standard rate is 10%."""
+    return reward * rate
 
 
-def scroll_line(label, amount):
+def notice_line(label, amount):
     return f"{label:<15}{money(amount):>12}"
 
 
-monthly = 32500 / 12
-print(money(monthly))
-print("Pension at 5%:", money(pension(monthly)))
-print("Pension at 8%:", money(pension(monthly, rate=0.08)))
-print(scroll_line("Basic pay", monthly))
-print(scroll_line("Pension", pension(monthly))
+reward = 4860
+print(money(reward))
+print("Guild cut at 10%:", money(guild_cut(reward)))
+print("Guild cut at 5%:", money(guild_cut(reward, rate=0.05)))
+print(notice_line("Reward", reward))
+print(notice_line("Guild cut", guild_cut(reward))

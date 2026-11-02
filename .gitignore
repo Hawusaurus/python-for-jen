@@ -19,3 +19,4 @@ Thumbs.db
 # Files the riddles and later lessons write
 **/my_work/output/
 **/my_work/riddle_*
+**/demo_output/

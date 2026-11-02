@@ -2,37 +2,35 @@
 #  THE GRIMOIRE'S RIDDLES · LESSON 03 · RIDDLE 1: "The Spell Cast Too Early"
 # ==================================================================
 #
-#  You called my name before my birth,
-#  and wondered what my words were worth;
-#  the scroll is read from top to toe:
-#  first write me down, then let me go.
+#  You called on my name before I was penned,
+#  and asked for an answer I couldn't yet lend;
+#  the scroll is read downward, from top to the toe:
+#  first write the spell down, and then let it go.
 #
-#  Mistress Pell's monthly pay helper.
-#  Dalvric put the important line at the very top, where he could see it.
+#  Pell's share helper. Dalvric put the most important line at the very top,
+#  where he could see it.
 #
 #  Run:  python bughunt/riddles/riddle_1_early.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Maren's monthly pay: 2708.33 cr
-#    Bram's monthly pay: 3041.67 cr
-#    Bram's weekly pay: 701.92 cr
-#    Wren's monthly pay: 2500.0 cr
+#    Wren's share of the troll reward: 1215.0 cr
+#    Bram's share of the ghoul reward: 413.33 cr
+#    The ghoul quest per day: 177.14 cr
+#    Thea's share of the rat reward: 120.0 cr
 
-print("Maren's monthly pay:", monthly(32500), "cr")
-
-
-def monthly(annual_salary):
-    """Annual salary -> monthly pay, rounded to 2 decimals."""
-    return round(annual_salary / 12, 2)
+print("Wren's share of the troll reward:", share(4860, 4), "cr")
 
 
+def share(reward, party_size):
+    """Each hero's share, rounded to 2 decimals."""
+    return round(reward / party_size, 2)
 
 
-def weekly(annual_salary):
-    """Annual salary -> weekly pay, rounded to 2 decimals."""
-    return round(annual_salary / 52, 2)
+def per_day(reward, days):
+    """Reward per day on the road, rounded to 2 decimals."""
+    return round(reward / days, 2)
 
 
-print("Bram's monthly pay:", monthly(36500), "cr")
-print("Bram's weekly pay:", weekly(36500), "cr")
-print("Wren's monthly pay:", monthly(30000), "cr")
+print("Bram's share of the ghoul reward:", share(1240, 3), "cr")
+print("The ghoul quest per day:", per_day(1240, 7), "cr")
+print("Thea's share of the rat reward:", share(240, 2), "cr")
