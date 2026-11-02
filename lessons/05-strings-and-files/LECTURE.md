@@ -80,6 +80,8 @@ Mention: printing a Path on Windows shows backslashes, so print `p.name`.
 
 ## [14–15 min] Handover
 
+Mention `bughunt/riddles/`: five optional one-bug riddles (the last has two) for fast finishers or homework.
+
 Open `EXERCISES.pdf`. Stress the house rule: run from the lesson folder, or
 `data/...` isn't found. Do the first line of Exercise 3 together (open the
 file, print `reader.fieldnames`), then leave her to it.
