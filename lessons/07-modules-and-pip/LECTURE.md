@@ -1,4 +1,4 @@
-# Lesson 07: Modules, venv and pip (lecture notes for Lars)
+# Lesson 07: The Armoury — modules, venv and pip (lecture notes for Lars)
 
 **Goal:** Jen can set up a virtual environment, install packages from
 `requirements.txt`, import from the standard library, and put her own functions
@@ -12,9 +12,9 @@ Do the venv live in the terminal *inside the lesson folder*, slowly. Then
 
 ## [Opener, 1 min] The Armoury
 
-Read Orrin's raven from `GUIDE.pdf`: `clean_money()` exists in eleven files, three
-of them different. Today: write it once, import it everywhere, and borrow the
-rest from people with more patience.
+Read Orrin's raven from `GUIDE.pdf`: `loot_share()` exists in eleven files, three
+of them different. Today: forge it once, import it everywhere, and borrow the
+rest from smiths with more patience.
 
 ## [0–5 min] venv and pip, live
 
@@ -39,9 +39,9 @@ deactivate                      # and activate again, so she sees both
 ## [5–8 min] import, three ways
 
 ```python
-import math;                math.ceil(8 / 3)          # 3
+import math;                math.ceil(8 / 3)          # 3 parties of three for 8 heroes
 from datetime import date;  date(2026, 4, 5)          # no prefix
-import statistics as st;    st.mean([1, 2, 3])        # nickname
+import statistics as st;    st.mean([260, 550, 2710]) # nickname
 ```
 
 The standard library ships with Python: `math`, `statistics`, `datetime`,
@@ -51,32 +51,36 @@ REPL is the manual. Nobody memorises it; everybody looks it up.
 Excel anchor: `=AVERAGE`, `=MEDIAN`, `=STDEV.S`, `=ROUNDUP`, `=DATEDIF`,
 `=RAND()`. Same functions, different drawer.
 
+Point at mean vs median with the Wyrm in the list: one 2,710 cr reward drags the
+mean far above the "typical" quest. The Queen will ask which average; she
+should be able to answer.
+
 ## [8–11 min] datetime in two minutes
 
 ```python
 from datetime import date, timedelta
-start = date.fromisoformat("2017-03-13")
-today = date(2026, 4, 5)                 # fixed, so the sheet's answers are stable
-(today - start).days                     # 3310, an int
+start = date.fromisoformat("2014-06-21")   # Wren joined the guild
+today = date(2026, 4, 5)                   # fixed, so the sheet's answers are stable
+(today - start).days                       # 4306, an int
 today + timedelta(days=90)
-f"{start:%d %b %Y} ({start:%A})"         # 13 Mar 2017 (Monday)
+f"{start:%d %b %Y} ({start:%A})"           # 21 Jun 2014 (Saturday)
 ```
 
 Subtracting dates gives a `timedelta`; print it and you get
-`3310 days, 0:00:00`. Ask for `.days`. (Bug 3 in today's bug hunt.)
+`4306 days, 0:00:00`. Ask for `.days`. (Bug 3 in today's bug hunt.)
 
 ## [11–14 min] Your own module
 
-Create `my_work/paytools.py` live with one function and a docstring, then
-in the REPL (started from `my_work/`... or just run a file next to it):
+Create `my_work/questkit.py` live with one function and a docstring, then
+run a file next to it:
 
 ```python
-import paytools
-paytools.monthly(32500)
-help(paytools)
+import questkit
+questkit.share(550, 4)     # 110.0: four heroes, leader takes two shares -> 5 shares
+help(questkit)
 ```
 
-- A module is a file. `import paytools` runs it once, top to bottom. So:
+- A module is a file. `import questkit` runs it once, top to bottom. So:
   no `print` at module level, or it prints on every import.
 - `if __name__ == "__main__":` — she saw it in lesson 00. Now it makes sense:
   quiet when imported, chatty when run. Show both.
@@ -88,8 +92,9 @@ help(paytools)
 Open `EXERCISES.pdf`. Exercise 1 is the venv, in the terminal, no file. Make
 sure the `(.venv)` prompt shows before she moves on. Exercise 6 is a package
 she's never seen (`rich`): the exercise is reading documentation, so don't
-explain it. Fast finishers: five optional riddles in `bughunt/riddles/`, one bug
-each (the last has two); answers in `instructor/solutions/07-modules-and-pip/riddles/`.
+explain it. The bug hunt is `bughunt/party_bug.py` (Grimoire, page 7). Fast
+finishers: five optional riddles in `bughunt/riddles/`, one bug each (the last
+has two); answers in `instructor/solutions/07-modules-and-pip/riddles/`.
 
 ---
 
@@ -98,7 +103,7 @@ each (the last has two); answers in `instructor/solutions/07-modules-and-pip/rid
 | VBA / Excel | Python |
 |---|---|
 | Tools → References, add-ins | `pip install`, `import` |
-| a `.bas` module you import into a workbook | `paytools.py`, `import paytools` |
+| a `.bas` module you import into a workbook | `questkit.py`, `import questkit` |
 | `WorksheetFunction.Average` | `statistics.mean` |
 | `Application.RoundUp` | `math.ceil` |
 | `DateDiff("d", a, b)` | `(b - a).days` |
@@ -110,4 +115,4 @@ each (the last has two); answers in `instructor/solutions/07-modules-and-pip/rid
 **Questions to check understanding:**
 - What's the difference between `import math` and `from math import ceil`?
 - Why does `pip install` go into `.venv/` and not into Windows?
-- What happens on `import paytools` if `paytools.py` has a `print` at the top?
+- What happens on `import questkit` if `questkit.py` has a `print` at the top?
