@@ -80,6 +80,9 @@ Then the headcount: 41.5% of the realm's Treasury roll is women. Let that sit.
   gap incantation. Bug 2 is rule 1 from session 1 (divide by men's pay), bug 3
   is the mean-vs-median question, bug 1 is a plain KeyError. She has everything she needs to explain,
   in three commit messages, why the Privy Council was told 24.6% for years.
+- Five optional riddles in `bughunt/riddles/` test the Accord's figures one at a time
+  (hourly vs annual, sign, wrong denominator, bonus gap among receivers only). Solutions in
+  `instructor/solutions/12-the-grimoire-closes/riddles/`.
 - The pull request is called "The Grimoire Closes". Review it properly: ask
   one "why" question per function. Then award the Keeper's Seal.
 
