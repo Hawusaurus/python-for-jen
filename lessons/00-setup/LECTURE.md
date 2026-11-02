@@ -73,6 +73,7 @@ lesson-01   ●──●──●──●
 - Every lesson lives in its own folder on its own branch, and lessons don't depend
   on each other.
 - Hand over to `EXERCISES.pdf`.
+- After the bug hunt: five optional riddles in `bughunt/riddles/` (one bug each, the last has two). Answers in `instructor/solutions/00-setup/riddles/`.
 
 ---
 
