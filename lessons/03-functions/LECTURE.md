@@ -92,6 +92,7 @@ Open `EXERCISES.pdf`. Point out that on this sheet the Given lines are the
 *calls* and she writes the functions above them. Do exercise 1 together up
 to the `def` line. Mention `python -i my_work/ex5_holiday.py` for trying
 functions one at a time.
+After the bug hunt: five optional riddles in `bughunt/riddles/` (one bug each, the last has two). Answers in `instructor/solutions/03-functions/riddles/`.
 
 ---
 
