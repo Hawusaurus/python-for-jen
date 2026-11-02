@@ -1,0 +1,41 @@
+Employee Ref,Name,Guild,Hours,Salary,Bonus,Gender,Start
+ TM1092 ,"Pennyworth, Nye",Guard,37.5,"41,900 cr",,Male,2018-09-16
+tm1178,"Woolpack, Hild",Library,37.5 hrs,26550,,F,2015-11-26
+tm1105,"MARCHBANK, MAREN",GUA,37.5,24950,,f,28/03/2012
+1180,"Wildmoor, Una",Library,37.5,"29,000.00 cr",,F,2021-01-02
+tm1189,"oakhollow, nell",Apothecary,37.5 hrs,"31,750.00 cr","1,740 cr",Female,15/06/2023
+tm1082,"Eastmarch, Jory",Harbour,37.5 hrs,"37,650.00 cr","4,190 cr",Male,23/08/2020
+tm1037,"wildmoor, ulric",Forge,37.5,25900,,Male,05/04/2019
+ TM1199 ,"NIGHTINGALE, CADOC",Apothecary,22.5,37950,"4,290 cr",Male,2022-10-13
+tm1081,"Fairweather  ,  Maddox",Harbour,37.5 hrs,"47,100.00 cr","4,720 cr",M,2017-03-11
+tm1065,"Quickwater, Corwin",Harbour,37.5,45200,,M,14/07/2021
+tm1043,"WILDMOOR, ALDER",FOR,37.5,29750,"1,970 cr",m,2023-09-10
+1025,"Coppersmith, Tobin",Forge,37.5,"25,700 cr","2,050 cr",M,26/06/2015
+1033,"LONGSTRIDE, PIRAN",Forge,37.5,36450,"2,330 cr",m,05/10/2009
+ TM1152 ,"WILDMOOR, NERYS",CLO,37.5 hrs,"25,950 cr","1,240 cr",f,2013-10-26
+TM1089,"BLACKWOOD, ORRIN",Guard,37.5 hrs,"28,200 cr",,m,2017-03-05
+tm1112,"PENNYWORTH, SILAS",Guard,37.5 hrs,61750,"1,800 cr",M,10/09/2022
+1036,"GOLDENHAND, VESNA",Forge,37.5 hrs,"24,350.00 cr",,F,12/12/2006
+1069,"Greymantle, Doran",Harbour,37.5,"36,250.00 cr","1,940 cr",M,16/05/2019
+ TM1017 ,"Pennyworth, Cadoc",Forge,37.5,"29,200 cr",,Male,2023-08-05
+tm1151,"STONEBRIDGE, GIDEON",Clockworks,37.5,"49,350 cr","4,050 cr",m,21/05/2012
+ TM1095 ,"cinderhall, ninian",GUA,37.5,"30,650.00 cr","2,460 cr",m,12/12/2018
+1074,"Tallow  ,  Quill",Harbour,37.5,"42,500.00 cr","2,740 cr",Male,2015-02-28
+1193,"NORTHWIND, DUNSTAN",APO,37.5,"33,100.00 cr","2,500 cr",Male,2007-08-18
+tm1083,"tallow, merrick",HAR,37.5 hrs,"45,650 cr","5,820 cr",M,02/01/2010
+1049,"MOSSGROVE, ADA",Forge,37.5,"33,850 cr","3,850 cr",F,24/09/2014
+TM1085,"Blackwood, Pell",Harbour,37.5,"24,150 cr",,F,16/01/2017
+TM1133,"Saltmarsh, Corwin",Treasury,37.5 hrs,"28,150.00 cr",,M,19/01/2017
+tm1061,"Cinderhall  ,  Finnian",Harbour,37.5,"28,950 cr","1,550 cr",M,2020-01-03
+1137,"saltmarsh, thea",Treasury,22.5,"18,450.00 cr","1,360 cr",Female,08/10/2020
+ TM1045 ,"Amberlyn, Dunstan",FOR,37.5 hrs,"26,200 cr",,M,18/05/2020
+TM1107,"NORTHWIND, ISABEAU",Guard,37.5,"35,850.00 cr","3,360 cr",Female,31/07/2016
+TM1121,"tallow, rafe",Treasury,37.5,32150,,Male,01/11/2015
+TM1053,"Westerly, Mab",Forge,37.5,"20,950 cr",,f,13/09/2011
+ TM1064 ,"Hawkridge  ,  Osric",Harbour,37.5 hrs,"28,000 cr",,Male,2020-09-30
+1127,"oldcastle, piran",Treasury,37.5,"31,850 cr","1,420 cr",Male,2019-06-29
+TM1108,"Fairweather, Gwen",Guard,37.5,22450,580 cr,F,19/01/2009
+TM1060,"Fairweather, Bryn",Forge,37.5,"29,700 cr",,f,29/07/2012
+tm1078,"ravenscar, thea",Harbour,37.5,"24,000 cr",520 cr,f,11/01/2014
+tm1122,"cinderhall, jessamy",TRE,18.75,"14,300 cr",,F,12/11/2016
+ TM1030 ,"amberlyn, osric",Forge,37.5,"29,050 cr",,m,27/06/2022
