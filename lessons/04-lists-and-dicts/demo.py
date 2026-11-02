@@ -2,71 +2,71 @@
 # or copy sections into the REPL one by one.
 
 print("--- A list is a column ---")
-staff = ["Pell Marchbank", "Orrin Ironfoot", "Siv Larkspur"]
-print(staff[0], "|", staff[-1], "|", staff[1:3], "|", len(staff))
-staff.append("Bram Kettleby")
-print(staff)
-print("Orrin Ironfoot" in staff, "Dalvric" in staff)
+heroes = ["Bram Ironfoot", "Wren Hawkridge", "Tamsin Larkspur"]
+print(heroes[0], "|", heroes[-1], "|", heroes[1:3], "|", len(heroes))
+heroes.append("Piran Dovecote")
+print(heroes)
+print("Wren Hawkridge" in heroes, "Dalvric" in heroes)
 
-salaries = [31000, 36500, 28000, 24500]
-print(sum(salaries), max(salaries), min(salaries), sum(salaries) / len(salaries))
-print(sorted(salaries, reverse=True)[:2])
-print("salaries.sort() returns:", salaries.sort(), "  <- Dalvric printed this once")
-print(salaries)
+rewards = [320, 1240, 150, 610]
+print(sum(rewards), max(rewards), min(rewards), sum(rewards) / len(rewards))
+print(sorted(rewards, reverse=True)[:2])
+print("rewards.sort() returns:", rewards.sort(), "  <- Dalvric printed this once")
+print(rewards)
 
 print("\n--- The loop recipe, with a list ---")
-above = []
-for s in salaries:
-    if s > 30000:
-        above.append(s)
-print(above)
+big = []
+for r in rewards:
+    if r > 500:
+        big.append(r)
+print(big)
 
 print("\n--- A dictionary is a row with headers ---")
-employee = {"name": "Pell Marchbank", "department": "Treasury", "salary": 31000}
-print(employee["name"], employee["salary"])
-employee["salary"] = 32000
-employee["rating"] = 4
-print(employee)
-# print(employee["Name"])     # <- uncomment: KeyError. Keys are exact.
-print(employee.get("bonus", 0), "  <- .get: XLOOKUP with an if-not-found")
-for key, value in employee.items():
-    print(f"  {key:<12}{value}")
+hero = {"name": "Wren Hawkridge", "class": "Ranger", "level": 19}
+print(hero["name"], hero["level"])
+hero["level"] = 20
+hero["pet"] = "a hawk called Tuesday"
+print(hero)
+# print(hero["Name"])     # <- uncomment: KeyError. Keys are exact.
+print(hero.get("gold", 0), "  <- .get: XLOOKUP with an if-not-found")
+for key, value in hero.items():
+    print(f"  {key:<8}{value}")
 
 print("\n--- A dictionary is also a lookup table ---")
-managers = {"Clockworks": "Orrin Ironfoot", "Treasury": "Pell Marchbank"}
-print(managers["Clockworks"], "|", managers.get("Kitchens", "no guildmaster yet"))
+wardens = {"Greyfen": "Alder Pike", "Ironhills": "Hild Stonebridge"}
+print(wardens["Ironhills"], "|", wardens.get("Thornwood", "no warden yet"))
 
 print("\n--- A list of dictionaries is a table ---")
-staff = [
-    {"name": "Pell Marchbank", "dept": "Treasury", "salary": 31000},
-    {"name": "Orrin Ironfoot", "dept": "Clockworks", "salary": 36500},
-    {"name": "Wren Thistlewood", "dept": "Clockworks", "salary": 29000},
+party = [
+    {"name": "Bram Ironfoot", "class": "Warrior", "level": 11, "loot": 1240},
+    {"name": "Wren Hawkridge", "class": "Ranger", "level": 19, "loot": 2480},
+    {"name": "Garrick Oldcastle", "class": "Warrior", "level": 14, "loot": 1240},
 ]
 total = 0
-top = staff[0]
-for person in staff:
-    total += person["salary"]
-    if person["salary"] > top["salary"]:
-        top = person
-print("total", total, "| top", top["name"])
+top = party[0]
+for h in party:
+    total += h["loot"]
+    if h["level"] > top["level"]:
+        top = h
+print("total loot", total, "| most experienced", top["name"])
 
 print("\n--- COUNTIF: counting with a dictionary ---")
 count = {}
-for person in staff:
-    dept = person["dept"]
-    if dept in count:
-        count[dept] += 1
+for h in party:
+    c = h["class"]
+    if c in count:
+        count[c] += 1
     else:
-        count[dept] = 1
+        count[c] = 1
 print(count)
 
 print("\n--- Group by: dictionary of lists ---")
-by_dept = {}
-for person in staff:
-    dept = person["dept"]
-    if dept not in by_dept:
-        by_dept[dept] = []
-    by_dept[dept].append(person["salary"])
-print(by_dept)
-for dept, values in by_dept.items():
-    print(f"  {dept:<11} average {sum(values) / len(values):,.2f} cr")
+by_class = {}
+for h in party:
+    c = h["class"]
+    if c not in by_class:
+        by_class[c] = []
+    by_class[c].append(h["level"])
+print(by_class)
+for c, levels in by_class.items():
+    print(f"  {c:<8} average level {sum(levels) / len(levels):.1f}")

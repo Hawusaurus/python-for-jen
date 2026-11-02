@@ -1,36 +1,37 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 04 · RIDDLE 5: "The Remembering Spell"
+#  THE GRIMOIRE'S RIDDLES · LESSON 04 · RIDDLE 5: "The Party That Remembered"
 # ==================================================================
 #
-#    A list that waits beside the door
-#    remembers all who came before.
-#    And one who counts from one, not none,
-#    will miss the first and think he's done.
+#    A pack left hanging by the door
+#    keeps every party's boots from before;
+#    and one who counts from one, not none,
+#    leaves the first day's march undone.
 #
-#  Two small helpers from the Grimoire: one enrols people into a
-#  guild, one adds up weekly hours. Both are wrong. (Two bugs.)
+#  Two helpers from the Grimoire: one signs heroes up for a party,
+#  one adds up the days on the road. Both are wrong. (Two bugs.)
 #
 #  Run:  python bughunt/riddles/riddle_5_remembering.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Forge: ['Bram Kettleby', 'Wren Thistlewood']
-#    Library: ['Hild Woolpack']
-#    Total weekly hours: 127.5
-
-def enrol(name, guild_list=[]):
-    guild_list.append(name)
-    return guild_list
+#    Ironhills party: ['Bram Ironfoot', 'Wren Hawkridge']
+#    Greyfen party: ['Piran Dovecote']
+#    Days on the road: 23
 
 
-forge = enrol("Bram Kettleby")
-forge = enrol("Wren Thistlewood", forge)
-library = enrol("Hild Woolpack")
+def sign_up(name, party=[]):
+    party.append(name)
+    return party
 
-print("Forge:", forge)
-print("Library:", library)
 
-hours = [37.5, 30, 22.5, 37.5]
+ironhills = sign_up("Bram Ironfoot")
+ironhills = sign_up("Wren Hawkridge", ironhills)
+greyfen = sign_up("Piran Dovecote")
+
+print("Ironhills party:", ironhills)
+print("Greyfen party:", greyfen)
+
+days = [4, 7, 5, 7]
 total = 0
-for i in range(1, len(hours)):
-    total += hours[i]
-print("Total weekly hours:", total)
+for i in range(1, len(days)):
+    total += days[i]
+print("Days on the road:", total)

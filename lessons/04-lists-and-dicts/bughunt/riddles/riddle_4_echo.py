@@ -1,33 +1,30 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 04 · RIDDLE 4: "The Echo in the Ledger"
+#  THE GRIMOIRE'S RIDDLES · LESSON 04 · RIDDLE 4: "The Echo"
 # ==================================================================
 #
 #    I made a copy, so I thought,
-#    and changed the copy as I ought.
-#    But every crown I gave the new,
-#    the old one somehow gained it too.
+#    and changed the copy, as I ought.
+#    But every change came echoing back:
+#    one list, two names, one single track.
 #
-#  Lady Siv's 3 % raise, applied to a copy so the old wages can be
-#  shown next to the new ones. The old wages column is lying.
+#  The Queen doubled the reward on every notice for the Midsummer
+#  fair. Pell wants the old and new rewards side by side.
 #
 #  Run:  python bughunt/riddles/riddle_4_echo.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Bram   24,500 cr ->  25,235 cr
-#    Wren   29,000 cr ->  29,870 cr
-#    Hild   31,000 cr ->  31,930 cr
-#    Extra cost per year: 2,535 cr
+#    Old rewards: [260, 550, 620]
+#    Fair rewards: [520, 1100, 1240]
+#    Old total: 1430 cr
+#    Fair total: 2860 cr
 
-names = ["Bram", "Wren", "Hild"]
-salaries = [24500, 29000, 31000]
-rise = 1.03
+rewards = [260, 550, 620]
 
-raised = salaries
-for i in range(len(raised)):
-    raised[i] = round(raised[i] * rise)
+fair = rewards
+for i in range(len(fair)):
+    fair[i] = fair[i] * 2
 
-for i in range(len(names)):
-    print(f"{names[i]:<6}{salaries[i]:>7,} cr -> {raised[i]:>7,} cr")
-
-extra = sum(raised) - sum(salaries)
-print(f"Extra cost per year: {extra:,} cr")
+print("Old rewards:", rewards)
+print("Fair rewards:", fair)
+print("Old total:", sum(rewards), "cr")
+print("Fair total:", sum(fair), "cr")
