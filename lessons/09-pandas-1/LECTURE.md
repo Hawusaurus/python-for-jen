@@ -83,7 +83,9 @@ part.to_csv("my_work/part_timers.csv", index=False)
 ```
 
 "That's a tab she makes by hand every month." Open `EXERCISES.pdf`, type the
-opener together, then leave her to it with `CHEATSHEET.pdf`.
+opener together, then leave her to it with `CHEATSHEET.pdf`. Fast finishers: five optional
+riddles in `bughunt/riddles/`, one bug each (the last has two); answers in
+`instructor/solutions/09-pandas-1/riddles/`.
 
 ---
 
