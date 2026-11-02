@@ -2,29 +2,29 @@
 #  THE GRIMOIRE'S RIDDLES · LESSON 06 · RIDDLE 2: "The Wrong Ward"
 # ==================================================================
 #
-#    I warded the door against the thief,
-#    but in came the flood and drowned my sheaf.
-#    A ward is cast for one foe's name;
-#    see who is knocking, then do the same.
+#    I hung a ward against the rain,
+#    and wondered why I'm soaked again.
+#    The storm that came was not the one
+#    my careful charm was cast upon.
 #
-#  Orrin's check of the weekly hours in the broken scroll. It should
-#  name the bad row and count the good ones.
+#  Captain Siv's party sizes, as the Scriptorium wrote them down.
+#  The page should skip the unreadable ones and add up the rest.
 #
 #  Run:  python bughunt/riddles/riddle_2_ward.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Bad hours for TM1120
-#    Rows with good hours: 199
+#    Heroes sent out: 15
+#    Unreadable: 1
 
-import csv
+sizes = ["4", "3", "five", "2", "6"]
 
-good = 0
-with open("data/thornmere_payroll_broken.csv", newline="", encoding="utf-8") as f:
-    for row in csv.DictReader(f):
-        try:
-            float(row["weekly_hours"])
-            good += 1
-        except TypeError:
-            print("Bad hours for", row["employee_id"])
+total = 0
+skipped = 0
+for text in sizes:
+    try:
+        total += int(text)
+    except TypeError:
+        skipped += 1
 
-print("Rows with good hours:", good)
+print("Heroes sent out:", total)
+print("Unreadable:", skipped)

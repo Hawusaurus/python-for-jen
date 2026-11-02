@@ -1,40 +1,34 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 06 · RIDDLE 5: "The Empty Hour"
+#  THE GRIMOIRE'S RIDDLES · LESSON 06 · RIDDLE 5: "A Day of Nothing"
 # ==================================================================
 #
-#    When hours are none, the sum will break,
-#    so ward that door for safety's sake.
-#    And when you share the pot around,
-#    share only with the ones you found.
+#    A quest that took no days at all
+#    divides the world and makes it fall;
+#    and when you share among the few,
+#    don't count the ones who never knew.
 #
-#  The average hourly rate across the broken scroll. It crashes on
-#  one row, and when it doesn't, it's too low. (Two bugs.)
+#  The Queen asked for the average reward per day on the road, from
+#  this moon's broken ledger. It crashes, and once it doesn't, the
+#  average is too low. (Two bugs.)
 #
 #  Run:  python bughunt/riddles/riddle_5_share.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Usable rows: 196 of 200
-#    Average hourly rate: 17.12 cr
-
+#    Quests in the ledger: 400
+#    Usable: 395
+#    Average reward per day: 74.30 cr
 import csv
 
-
-def hourly(row):
-    salary = float(row["annual_salary"])
-    hours = float(row["weekly_hours"])
-    return salary / 52 / hours
-
-
-rates = []
+per_day = []
 rows = 0
-with open("data/thornmere_payroll_broken.csv", newline="", encoding="utf-8") as f:
+with open("data/quests_broken.csv", newline="", encoding="utf-8") as f:
     for row in csv.DictReader(f):
         rows += 1
         try:
-            rates.append(hourly(row))
-        except ValueError:
+            per_day.append(float(row["reward"]) / float(row["days"]))
+        except (ValueError, TypeError):
             pass
 
-average = sum(rates) / rows
-print(f"Usable rows: {len(rates)} of {rows}")
-print(f"Average hourly rate: {average:.2f} cr")
+print("Quests in the ledger:", rows)
+print("Usable:", len(per_day))
+print(f"Average reward per day: {sum(per_day) / rows:.2f} cr")
