@@ -86,6 +86,8 @@ isn't enough.
 
 ## [14–15 min] Handover
 
+Mention `bughunt/riddles/`: five optional one-bug riddles (the last has two) for fast finishers or homework.
+
 Open `EXERCISES.pdf`. Exercise 1 is typed *with* its bug on purpose. Remind
 her: today a crash is a success, as long as she can say what type it was.
 
