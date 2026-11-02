@@ -1,33 +1,38 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 09 · RIDDLE 3: "The Sort That Forgot"
+#  THE GRIMOIRE'S RIDDLES · LESSON 09 · RIDDLE 3: "The Sort That Didn't Stick"
 # ==================================================================
 #
-#  I sorted the Guard from rich to poor,
-#  then read the list I had before.
-#  The sorted copy, shining new,
-#  was never kept, and slipped from view.
+#  You sorted well, then let it go:
+#  the tidy copy blew away.
+#  The ledger you print is the one you kept,
+#  still in the order of yesterday.
 #
-#  The Queen wants the three best-paid members of the Guard.
+#  The Quartermistress wants the five newest members of the guild for the
+#  welcome dinner. Biscuit is doing the seating plan.
 #
 #  Run:  python bughunt/riddles/riddle_3_sort.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Guards: 35
-#    Guard pay bill: 1129250
-#    Best paid in the Guard:
-#    first_name  last_name  annual_salary
-#         Silas Pennyworth          61750
-#       Benedek  Northwind          50800
-#           Wyn     Yarrow          49000
+#    Newest members of the guild:
+#                       name    class      joined
+#    76    Jasper Longstride  Warrior  2023-11-16
+#    119        Jory Redfern     Bard  2023-11-02
+#    25      Edric Marchbank  Warrior  2023-10-12
+#    10   Kellan Nightingale   Ranger  2023-10-08
+#    50      Doran Mossgrove   Ranger  2023-05-28
+#
+#    Classes at the welcome dinner: Warrior, Bard, Warrior, Ranger, Ranger
+#    Joined most recently: Jasper Longstride
 
 import pandas as pd
-pd.set_option("display.width", 120)
-df = pd.read_csv("data/thornmere_payroll.csv")
 
-guard = df[df["department"] == "Guard"]
-print("Guards:", len(guard))
-print("Guard pay bill:", guard["annual_salary"].sum())
-guard.sort_values("annual_salary", ascending=False)
-top = guard.head(3)
-print("Best paid in the Guard:")
-print(top[["first_name", "last_name", "annual_salary"]].to_string(index=False))
+pd.set_option("display.width", 120)
+heroes = pd.read_csv("data/heroes.csv")
+
+heroes.sort_values("joined", ascending=False)
+newest = heroes.head(5)
+print("Newest members of the guild:")
+print(newest[["name", "class", "joined"]])
+print()
+print("Classes at the welcome dinner:", ", ".join(newest["class"]))
+print("Joined most recently:", newest["name"].tolist()[0])

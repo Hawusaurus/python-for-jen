@@ -2,64 +2,64 @@
 # or copy sections into the REPL one by one.
 
 print("--- The napkin as code ---")
-months = 14
-rating = 4
-if months < 12:
+quests_done = 14
+difficulty = 4
+if quests_done < 3:
     rate = 0
-elif rating >= 4:
-    rate = 0.08
-elif rating == 3:
-    rate = 0.04
+elif difficulty >= 4:
+    rate = 0.25
+elif difficulty == 3:
+    rate = 0.10
 else:
     rate = 0
 print("rate =", rate)
-# if rating = 3:      # <- uncomment to see the SyntaxError
+# if difficulty = 3:      # <- uncomment to see the SyntaxError
 
 print("\n--- for: one item at a time ---")
-for name in "Orrin,Pell,Siv".split(","):
-    print("Hello", name)
+for hero in "Wren,Bram,Thea".split(","):
+    print("Welcome back", hero)
 
 print("\n--- range ---")
 print(list(range(5)), list(range(1, 6)), list(range(0, 20, 5)))
-for month in range(1, 13):
-    print(month, end=" ")
+for day in range(1, 13):
+    print(day, end=" ")
 print()
 
 print("\n--- several pieces per item ---")
-for record in "Orrin/36500/3;Pell/31000/4".split(";"):
-    name, salary, rating = record.split("/")
-    print(name, "earns", salary, "rated", rating)
+for record in "Wren/3100/4;Bram/3650/3".split(";"):
+    name, reward, difficulty = record.split("/")
+    print(name, "led a quest worth", reward, "at difficulty", difficulty)
 
 print("\n--- the loop recipe: before / inside / after ---")
 total = 0
 count = 0
 highest = 0
-for text in "31000,36500,28000".split(","):
-    salary = int(text)
-    total += salary
+for text in "3100,3650,2800".split(","):
+    reward = int(text)
+    total += reward
     count += 1
-    if salary > highest:
-        highest = salary
+    if reward > highest:
+        highest = reward
 print("total", total, "count", count, "highest", highest, "average", total / count)
 
 print("\n--- the Dalvric version (total = 0 inside the loop) ---")
-for text in "31000,36500,28000".split(","):
+for text in "3100,3650,2800".split(","):
     total = 0
     total += int(text)
 print("total", total, "  <- only the last one. That's the bug hunt.")
 
 print("\n--- while ---")
-salary = 28000
-years = 0
-while salary < 35000:
-    salary *= 1.03
-    years += 1
-print("years to 35k:", years)
+bounty = 2800
+months = 0
+while bounty < 3500:
+    bounty *= 1.03
+    months += 1
+print("months until the Wyrm bounty passes 3,500:", months)
 
 print("\n--- continue and break ---")
-for text in "2024,left,2019,STOP,2015".split(","):
-    if text == "left":
+for text in "2024,gone,2019,STOP,2015".split(","):
+    if text == "gone":
         continue
     if text == "STOP":
         break
-    print("start year", text)
+    print("joined", text)

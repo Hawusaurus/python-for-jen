@@ -1,13 +1,13 @@
 # ==================================================================
-#  PAGES FROM THE GRIMOIRE, PAGE 6: "roll_total_ROBUST.py"
+#  PAGES FROM THE GRIMOIRE, PAGE 6: "ledger_total_ROBUST.py"
 # ==================================================================
 #
-# Dalvric's "robust" version of the Roll total. He added the warding
-# spells after the Scriptorium's copy broke one full moon. The copy is
-# still broken. So is this.
+# Dalvric's "robust" total of every reward on the guild ledger. He
+# added the warding spells after the Scriptorium's copy broke one
+# full moon. The copy is still broken. So is this.
 #
 # THREE bugs:
-#   one is a SyntaxError in the error handling itself (an old incantation),
+#   one crashes inside the error handling itself (a misspelt ward),
 #   one double-counts crowns without anyone noticing,
 #   one is off by exactly one.
 #
@@ -16,8 +16,8 @@
 #
 # When it's fixed, it prints EXACTLY this:
 #
-#   Total salary: 6,322,500 cr
-#   Skipped 3 rows: TM1178, TM1037, TM1120
+#   Total of all rewards: 233,490 cr
+#   Skipped 4 rows: Q0005, Q0018, Q0092, Q0121
 #
 # Fix ONE bug per commit and explain it in the message.
 
@@ -27,15 +27,14 @@ total = 0
 skipped = 1
 skipped_ids = []
 
-with open("data/thornmere_payroll_broken.csv", newline="", encoding="utf-8") as f:
+with open("data/quests_broken.csv", newline="", encoding="utf-8") as f:
     for row in csv.DictReader(f):
         try:
-            salary = float(row["annual_salary"])
-            hours = float(row["weekly_hours"])
-        except ValueError, TypeError:
+            reward = float(row["reward"])
+        except (ValueError, TypError):
             skipped += 1
-            skipped_ids.append(row["employee_id"])
-        total += salary
+            skipped_ids.append(row["quest_id"])
+        total += reward
 
-print(f"Total salary: {total:,.0f} cr")
+print(f"Total of all rewards: {total:,.0f} cr")
 print(f"Skipped {skipped} rows: {', '.join(skipped_ids)}")

@@ -1,33 +1,32 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 06 · RIDDLE 3: "The Silent Sieve"
+#  THE GRIMOIRE'S RIDDLES · LESSON 06 · RIDDLE 3: "The Sieve That Kept Nothing"
 # ==================================================================
 #
-#    My net was wide; it caught it all,
-#    the fish, the boots, the castle wall.
-#    It caught my own mistake as well,
-#    and kept it quiet. Who can tell?
+#    My net was wide, it caught it all:
+#    the fish, the weed, the boots, the shawl.
+#    So when my own mistake swam through,
+#    the net just caught that mistake too.
 #
-#  Dalvric's 'unbreakable' salary total for the clean Roll. It never
-#  crashes. It also never adds anything up.
+#  Pell wants to know how many rewards in this moon's broken copy of
+#  the ledger can be read. The page says none of them can.
 #
 #  Run:  python bughunt/riddles/riddle_3_sieve.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Read 200 rows, skipped 0
-#    Total salary: 6,399,850 cr
-
+#    Readable rewards: 396
+#    Unreadable rewards: 4
 import csv
 
-total = 0
-read = 0
-skipped = 0
-with open("data/thornmere_payroll.csv", newline="", encoding="utf-8") as f:
+readable = 0
+unreadable = 0
+with open("data/quests_broken.csv", newline="", encoding="utf-8") as f:
     for row in csv.DictReader(f):
         try:
-            total += float(row["annual salary"])
-            read += 1
+            reward = float(row["Reward"])
         except Exception:
-            skipped += 1
+            unreadable += 1
+        else:
+            readable += 1
 
-print(f"Read {read} rows, skipped {skipped}")
-print(f"Total salary: {total:,.0f} cr")
+print("Readable rewards:", readable)
+print("Unreadable rewards:", unreadable)

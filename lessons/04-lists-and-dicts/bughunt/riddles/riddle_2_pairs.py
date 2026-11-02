@@ -1,38 +1,31 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 04 · RIDDLE 2: "Two by Two"
+#  THE GRIMOIRE'S RIDDLES · LESSON 04 · RIDDLE 2: "Half a Pair"
 # ==================================================================
 #
-#    I asked the roll for pairs of two,
-#    a name, a wage, as couples do.
-#    It gave me names and nothing more;
-#    the wages waited by another door.
+#    I asked the book for name and level;
+#    it gave me names, the little devil.
+#    Two hands held out, but one was bare,
+#    and so the spell fell through the air.
 #
-#  Orrin's attempt at a wage table for the Privy Council. It should
-#  print one line per person and a total.
+#  Captain Siv wants the party's levels read out before they ride
+#  for the Ironhills. This page was meant to do it.
 #
 #  Run:  python bughunt/riddles/riddle_2_pairs.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Name                     Wage
-#    -----------------------------
-#    Pell Marchbank      31,000 cr
-#    Orrin Ironfoot      36,500 cr
-#    Siv Larkspur        38,200 cr
-#    -----------------------------
-#    Total              105,700 cr
-#    Average          35,233.33 cr
+#    Bram Ironfoot      level 11
+#    Wren Hawkridge     level 19
+#    Garrick Oldcastle  level 14
+#    Party level: 44
 
-wages = {"Pell Marchbank": 31000, "Orrin Ironfoot": 36500, "Siv Larkspur": 38200}
+levels = {
+    "Bram Ironfoot": 11,
+    "Wren Hawkridge": 19,
+    "Garrick Oldcastle": 14,
+}
+
 total = 0
-count = 0
-
-print(f"{'Name':<16}{'Wage':>13}")
-print("-" * 29)
-for name, salary in wages:
-    print(f"{name:<16}{salary:>10,} cr")
-    total += salary
-    count += 1
-
-print("-" * 29)
-print(f"{'Total':<16}{total:>10,} cr")
-print(f"{'Average':<16}{total / count:>10,.2f} cr")
+for name, level in levels:
+    print(f"{name:<19}level {level}")
+    total += level
+print("Party level:", total)

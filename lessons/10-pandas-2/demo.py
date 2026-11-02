@@ -3,37 +3,42 @@
 import pandas as pd
 
 pd.set_option("display.width", 120)
-df = pd.read_csv("data/thornmere_payroll.csv")
-df["hourly"] = df["annual_salary"] / 52 / df["weekly_hours"]
+quests = pd.read_csv("data/quests.csv")
 
 print("--- groupby is the PivotTable ---")
-print(df["department"].value_counts())
-print(df.groupby("department")["annual_salary"].mean().round(0))
-print(df.groupby("department")["annual_salary"].agg(["count", "mean", "median"]).round(0))
-both = df.groupby(["department", "gender"])["hourly"].mean()
-print(both.round(2).head(4))
-print(both.unstack().round(2))
-# print(df.groupby("department", "gender")["hourly"].mean())   # <- uncomment: the two-keys mistake
+print(quests["region"].value_counts())
+print(quests.groupby("region")["reward"].mean().round(0))
+print(quests.groupby("region")["reward"].agg(["count", "mean", "median"]).round(0))
+both = quests.groupby(["monster", "outcome"])["quest_id"].count()
+print(both.head(4))
+print(both.unstack(fill_value=0))
+# print(quests.groupby("monster", "outcome")["quest_id"].count())   # <- uncomment: the two-keys mistake
 
 print("\n--- pivot_table: the dialog with names ---")
-print(df.pivot_table(index="department", columns="gender", values="hourly",
-                     aggfunc="mean", margins=True).round(2))
+print(quests.pivot_table(index="region", columns="outcome", values="quest_id",
+                         aggfunc="count", margins=True))
 
 print("\n--- merge is XLOOKUP ---")
-guilds = pd.read_csv("data/guilds.csv")
-left = df.merge(guilds, on="department", how="left")
-inner = df.merge(guilds, on="department", how="inner")
-print("rows:", len(df), "left:", len(left), "inner:", len(inner))
-print("NaN vaults:", left["vault"].isna().sum())
-print(sorted(left[left["vault"].isna()]["department"].unique()))
-left["vault"] = left["vault"].fillna("VLT-999")
-print("after fillna:", left["vault"].isna().sum())
+regions = pd.read_csv("data/regions.csv")
+left = quests.merge(regions, on="region", how="left")
+inner = quests.merge(regions, on="region", how="inner")
+print("rows:", len(quests), "left:", len(left), "inner:", len(inner))
+print("NaN wardens:", left["warden"].isna().sum())
+print(sorted(left[left["warden"].isna()]["region"].unique()))
+left["warden"] = left["warden"].fillna("(no warden)")
+print("after fillna:", left["warden"].isna().sum())
 
-print("\n--- Quartiles ---")
-df["quartile"] = pd.qcut(df["hourly"], 4, labels=["Lower", "Lower middle", "Upper middle", "Upper"])
-print((pd.crosstab(df["quartile"], df["gender"], normalize="index") * 100).round(1))
+print("\n--- Reward bands ---")
+labels = ["Pittance", "Fair", "Handsome", "King's ransom"]
+quests["band"] = pd.qcut(quests["reward"], 4, labels=labels)
+print((pd.crosstab(quests["band"], quests["outcome"], normalize="index") * 100).round(1))
 
-print("\n--- The Council's table in one line ---")
-table = df.groupby(["department", "gender"])["hourly"].mean().unstack()
-table["gap_pct"] = ((table["M"] - table["F"]) / table["M"] * 100).round(1)
-print(table.round(2).sort_values("gap_pct", ascending=False))
+print("\n--- The War Table in a few lines ---")
+table = quests.groupby(["region", "outcome"])["quest_id"].count().unstack(fill_value=0)
+table["quests"] = table.sum(axis=1)
+table["success_pct"] = (table["Success"] / table["quests"] * 100).round(1)
+print(table.sort_values("success_pct", ascending=False))
+
+print("\n--- Who goes where: crowns per day, by monster ---")
+quests["per_day"] = quests["paid"] / quests["days"]
+print(quests.groupby("monster")["per_day"].mean().round(1).sort_values(ascending=False))

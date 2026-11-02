@@ -1,5 +1,7 @@
 # Setup guide (Windows)
 
+*Before the Guild Hall door opens: your desk, your quill (VS Code) and your ledger (Git).*
+
 Work through this once. It takes 30–45 minutes. If a step doesn't work, stop
 and write down the exact error message. Error messages are useful.
 

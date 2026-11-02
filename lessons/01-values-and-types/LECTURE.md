@@ -10,34 +10,34 @@ better: make mistakes on purpose and read the errors together.
 
 ---
 
-## [Opener, 1 min] Mistress Pell's ravens
+## [Opener, 1 min] Pell's ravens
 
-Read the Paymaster's letter from `GUIDE.pdf`. It's Monday. Mistress Pell
-has seven ravens waiting, the Grimoire failed at the full moon
-("Run-time error '13': Type mismatch"), and the Queen wants the pay gap
+Read Pell's letter from `GUIDE.pdf`. It's Monday. The Quartermistress has
+seven ravens waiting, the Grimoire failed at the full moon
+("Run-time error '13': Type mismatch"), and the Queen wants the guild's record
 "in a sentence, for the Privy Council". Today's tools are numbers, text, and
-formatting. Hand Jen the cheat sheet now; she'll use it during the
-exercises.
+formatting: rewards, shares and notices. Hand Jen the cheat sheet now; she'll
+use it during the exercises.
 
 ## [0–2 min] Variables: no `Dim`
 
 ```python
-salary = 32500
-name = "Maren Ashdown"
+reward = 4860
+name = "Wren Hawkridge"
 ```
 
 - No `Dim`, no `As Long`. Python figures out the type itself.
 - `=` means "store". It's never a comparison (that's `==`, see below).
-- Names are **case-sensitive**: `Salary` and `salary` are two different
+- Names are **case-sensitive**: `Reward` and `reward` are two different
   variables. VBA doesn't care about case; Python does.
-- Convention: `snake_case` (`annual_salary`), not `AnnualSalary`.
+- Convention: `snake_case` (`party_size`), not `PartySize`.
 
 ## [2–5 min] Numbers: `int` and `float`
 
 ```python
-32500 / 12        # 2708.333...   / always gives a float
-32500 // 12       # 2708          whole-number division
-32500 % 12        # 4             remainder, like MOD
+1000 / 3          # 333.333...    / always gives a float
+1000 // 3         # 333           whole-number division (each hero's whole crowns)
+1000 % 3          # 1             remainder, like MOD (what's left for the guild chest)
 2 ** 10           # 1024          power
 2 ^ 10            # 8 (!!)        NOT power: it's XOR. Classic VBA trap.
 0.1 + 0.2         # 0.30000000000000004
@@ -51,21 +51,21 @@ For money: round at the end, and display with 2 decimals.
 ## [5–8 min] Strings
 
 ```python
-first = "Maren"
-last = 'Ashdown'                 # ' and " both work
+first = "Wren"
+last = 'Hawkridge'             # ' and " both work
 first + " " + last             # + joins strings (VBA: &)
-"  maren  ".strip().title()     # TRIM, then PROPER
+"  wREN  ".strip().title()     # TRIM, then PROPER
 len("Thornmere")               # LEN
-"TRE-0042"[0]                  # "T": counting starts at 0!
-"TRE-0042"[:3]                 # "TRE"   LEFT(…, 3)
-"TRE-0042"[-4:]                # "0042"  RIGHT(…, 4)
+"GOB-0042"[0]                  # "G": counting starts at 0!
+"GOB-0042"[:3]                 # "GOB"   LEFT(…, 3)
+"GOB-0042"[-4:]                # "0042"  RIGHT(…, 4)
 ```
 
 Index-from-0 is the biggest mental switch from Excel. Draw the positions
 under the string once:
 
 ```
-T R E - 0 0 4 2
+G O B - 0 0 4 2
 0 1 2 3 4 5 6 7
 ```
 
@@ -75,8 +75,8 @@ T R E - 0 0 4 2
 type(42), type(4.2), type("42"), type(True)
 "5" + 3          # TypeError: Python never converts silently
 int("5") + 3     # 8
-float("37.5")
-str(42) + " employees"
+float("12.5")
+str(42) + " heroes"
 ```
 
 Key message: **everything from a file or a form arrives as text.** You
@@ -86,11 +86,11 @@ it says *which* types clashed.
 ## [10–13 min] f-strings: number formats
 
 ```python
-monthly = 32500 / 12
-f"Monthly pay: {monthly:,.2f} cr"   # 'Monthly pay: 2,708.33 cr'
-f"{0.131:.1%}"                      # '13.1%'
-f"{'Basic pay':<15}|"               # left-aligned in 15 characters
-f"{42:04d}"                         # '0042'
+share = 4860 / 4
+f"Each hero gets {share:,.2f} cr"   # 'Each hero gets 1,215.00 cr'
+f"{0.648:.1%}"                      # '64.8%'
+f"{'Reward':<15}|"                  # left-aligned in 15 characters
+f"Q{42:04d}"                        # 'Q0042'
 ```
 
 The bit after `:` is like Excel's custom number format codes. She'll
@@ -99,9 +99,9 @@ recognise the idea immediately.
 ## [13–15 min] Booleans, `None`, and handover
 
 ```python
-salary = 28000
-salary == 28000        # True
-25000 <= salary <= 32000   # True: chained comparison, very handy
+reward = 1300
+reward == 1300             # True
+400 <= reward <= 1200      # False: chained comparison, very handy
 True and False, True or False, not True
 ```
 
@@ -109,7 +109,7 @@ True and False, True or False, not True
 - `None` means "no value", like VBA's `Nothing`/`Empty`.
 
 **Handover:** open `EXERCISES.pdf` together and do the first line of
-Exercise 1 live: create `my_work/ex1_pay_maths.py`, type the Given lines,
+Exercise 1 live: create `my_work/ex1_loot_maths.py`, type the Given lines,
 add one `print`, run it. Then leave her to it, with `CHEATSHEET.pdf` open.
 After the bug hunt: five optional riddles in `bughunt/riddles/` (one bug each, the last has two). Answers in `instructor/solutions/01-values-and-types/riddles/`.
 
@@ -137,6 +137,6 @@ After the bug hunt: five optional riddles in `bughunt/riddles/` (one bug each, t
 | case-insensitive names | **case-sensitive** names |
 
 **Questions to check understanding:**
-- What's `7 / 2`, `7 // 2`, `7 % 2`?
+- What's `7 / 2`, `7 // 2`, `7 % 2`? (Seven crowns, two heroes.)
 - Why does `"5" + 3` fail, and how do you fix it?
 - What's `"Thornmere"[1]`?

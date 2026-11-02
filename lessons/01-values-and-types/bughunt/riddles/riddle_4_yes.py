@@ -2,29 +2,30 @@
 #  THE GRIMOIRE'S RIDDLES · LESSON 01 · RIDDLE 4: "The Answer That Said No"
 # ==================================================================
 #
-#  I lowered my voice, then asked you loud,
-#  and wondered why you weren't allowed;
-#  if all I hold is lower case,
-#  compare me with the same small face.
+#  You whispered my answer in letters so small,
+#  then checked it against a word standing tall;
+#  the small and the tall will not match, though they rhyme:
+#  compare like with like, and you'll get it in time.
 #
-#  Lady Siv's pension sign-up form. Every subject who answered Yes
-#  is marked as not a member. Including Lady Siv.
+#  Captain Siv's sign-up sheet for the ghoul hunt. Everyone who answered YES
+#  is marked as not joining. Including Captain Siv.
 #
 #  Run:  python bughunt/riddles/riddle_4_yes.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Name: Lady Siv Larkspur
+#    Name: Captain Siv
 #    Raw answer: ' YES '
-#    Member of the pension scheme: True
-#    Pension if a member: 2,060.00 cr a year
+#    Joins the ghoul hunt: True
+#    Share if she joins: 279.00 cr
 
-name = "Lady Siv Larkspur"
+name = "Captain Siv"
 answer = " YES "
-salary = 41200
-rate = 0.05
-is_member = answer.strip().lower() == "Yes"
-pension = salary * rate
+reward = 1240
+cut_rate = 0.10
+party = 4
+joins = answer.strip().lower() == "Yes"
+share = reward * (1 - cut_rate) / party
 print("Name:", name)
 print("Raw answer:", repr(answer))
-print("Member of the pension scheme:", is_member)
-print("Pension if a member:", f"{pension:,.2f} cr a year")
+print("Joins the ghoul hunt:", joins)
+print("Share if she joins:", f"{share:,.2f} cr")

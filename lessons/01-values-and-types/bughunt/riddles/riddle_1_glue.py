@@ -2,29 +2,29 @@
 #  THE GRIMOIRE'S RIDDLES · LESSON 01 · RIDDLE 1: "The Glue That Would Not Stick"
 # ==================================================================
 #
-#  Words and numbers, side by side,
-#  refuse to join, however tried;
-#  turn the number into text,
-#  and they'll hold hands for what comes next.
+#  A word and a number were told to hold hands;
+#  the word was quite willing, the number had plans.
+#  Lend the number a word's coat to wear for the day,
+#  and the two will walk on in the very same way.
 #
-#  Mistress Pell wanted a one-line pay note for the Roll.
+#  Pell wanted a one-line note about the guild's star for the Roster.
 #  The page refuses to run at all.
 #
 #  Run:  python bughunt/riddles/riddle_1_glue.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    Maren Ashdown earns 32500 cr a year
-#    Guild: Treasury
-#    Monthly: 2708.33 cr
-#    Weekly: 625.0 cr
+#    Wren Hawkridge is a level 19 hero
+#    Class: Ranger
+#    Levels to the top: 1
+#    Halfway there at level 9.5
 
-first = "maren"
-last = "ashdown"
-salary = 32500
-guild = "Treasury"
+first = "wren"
+last = "hawkridge"
+level = 19
+hero_class = "Ranger"
 name = first.title() + " " + last.title()
-note = name + " earns " + salary + " cr a year"
+note = name + " is a level " + level + " hero"
 print(note)
-print("Guild:", guild)
-print("Monthly:", round(salary / 12, 2), "cr")
-print("Weekly:", round(salary / 52, 2), "cr")
+print("Class:", hero_class)
+print("Levels to the top:", 20 - level)
+print("Halfway there at level", level / 2)

@@ -1,29 +1,33 @@
 # ==================================================================
-#  THE GRIMOIRE'S RIDDLES · LESSON 08 · RIDDLE 2: "Coins That Were Words"
+#  THE GRIMOIRE'S RIDDLES · LESSON 08 · RIDDLE 2: "The Numbers That Were Words"
 # ==================================================================
 #
-#  I read the scroll and kept each line
-#  exactly as the scribe's design.
-#  "41900": a word, not gold.
-#  You cannot halve a word, I'm told.
+#  The file hands over only text,
+#  however much it looks like sums.
+#  You stacked the words into a column:
+#  turn them to numbers as each comes.
 #
-#  Dalvric's monthly wage bill. It should divide every salary by 12.
+#  Captain Siv asked how many big rewards are on the board. Dalvric's
+#  answer has been waiting by the window since the last full moon.
 #
 #  Run:  python bughunt/riddles/riddle_2_words.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    First three monthly salaries: [3491.67 2212.5  2079.17]
-#    Monthly wage bill: 533320.83
+#    Quests: 400
+#    Rewards over 1,000 cr: 43
+#    Average reward: 587.72
+#    Biggest reward: 4540.0
 
 import csv
 import numpy as np
 
-salaries = []
-with open("data/thornmere_payroll.csv", newline="", encoding="utf-8") as f:
+rewards = []
+with open("data/quests.csv", newline="", encoding="utf-8") as f:
     for row in csv.DictReader(f):
-        salaries.append(row["annual_salary"])
-salaries = np.array(salaries)
+        rewards.append(row["reward"])
 
-monthly = salaries / 12
-print("First three monthly salaries:", monthly[:3].round(2))
-print("Monthly wage bill:", monthly.sum().round(2))
+rewards = np.array(rewards)
+print("Quests:", len(rewards))
+print("Rewards over 1,000 cr:", (rewards > 1000).sum())
+print("Average reward:", round(rewards.mean(), 2))
+print("Biggest reward:", rewards.max())

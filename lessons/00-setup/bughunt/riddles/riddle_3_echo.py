@@ -2,32 +2,32 @@
 #  THE GRIMOIRE'S RIDDLES · LESSON 00 · RIDDLE 3: "The Echo in the Hall"
 # ==================================================================
 #
-#  Ask me a number, I'll answer a word,
-#  the strangest reply you have ever heard;
-#  wrapped up in quotes I am only a name,
-#  unwrap me and I'll tell the sum, not the same.
+#  Ask for a count and I give you a name,
+#  the word on the label, the tag, not the game;
+#  a word in its quotes is a word, nothing more:
+#  unwrap it to find what was counted before.
 #
-#  Lady Siv asked this page how many guards are on the Roll.
+#  Captain Siv asked this page how many warriors are on the roster.
 #  It answered her with a word instead of a number.
 #
 #  Run:  python bughunt/riddles/riddle_3_echo.py
 #  When it's fixed, it prints EXACTLY this:
 #
-#    The Roll of the Realm, by trade
-#    Guards on the Roll: 35
-#    Apprentices on the Roll: 12
-#    Cooks on the Roll: 9
-#    Scribes on the Roll: 15
-#    Everyone: 71
+#    The guild roster, by class
+#    Warriors: 24
+#    Rangers: 18
+#    Mages: 16
+#    Bards: 12
+#    Everyone: 70
 
-guards = 35
-apprentices = 12
-cooks = 9
-scribes = 15
-everyone = guards + apprentices + cooks + scribes
-print("The Roll of the Realm, by trade")
-print("Guards on the Roll:", "guards")
-print("Apprentices on the Roll:", apprentices)
-print("Cooks on the Roll:", cooks)
-print("Scribes on the Roll:", scribes)
+warriors = 24
+rangers = 18
+mages = 16
+bards = 12
+everyone = warriors + rangers + mages + bards
+print("The guild roster, by class")
+print("Warriors:", "warriors")
+print("Rangers:", rangers)
+print("Mages:", mages)
+print("Bards:", bards)
 print("Everyone:", everyone)
