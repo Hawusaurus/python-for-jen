@@ -72,8 +72,9 @@ lesson-01   ●──●──●──●
 - She writes **every** file herself in `my_work/` and checks it against the
   expected output on the sheet. No templates, no autograder.
 - Show how to read an error: last line first (what), then the line number (where).
-- Every lesson lives in its own folder on its own branch, and lessons don't depend
-  on each other.
+- Every lesson has its own folder (all of them are always there), and her work
+  for it goes on its own branch (`lesson-01`, `lesson-02`, ...). Lessons don't
+  depend on each other.
 - Hand over to `EXERCISES.pdf`.
 - After the bug hunt: five optional riddles in `bughunt/riddles/` (one bug each, the last has two). Answers in `instructor/solutions/00-setup/riddles/`.
 
