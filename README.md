@@ -27,11 +27,12 @@ Grimoire** by building the **Charter Report** yourself.
 
 ## How a lesson works
 
-**Every lesson is its own folder on its own branch.** Lessons don't depend
-on each other.
+**Every lesson has its own folder, and your work for it goes on its own
+branch.** All lesson folders are always there, so you can look back at an
+earlier cheatsheet any time. Lessons don't depend on each other.
 
 ```bash
-git checkout lesson-01            # switch to the lesson
+git checkout lesson-01            # switch to the lesson's branch
 cd lessons/01-values-and-types    # always work inside the lesson folder
 ```
 
