@@ -1,0 +1,41 @@
+Quest,Title,Region,Danger,Reward,Party,Posted,Outcome
+ Q0001 ,GUARD THE ROAD AGAINST GOBLINS AT MOSSGROVE ORCHARD,THOR,*,260 cr,1 heroes,2024-01-04,SUCCESS
+0002,  Clear bandits at Dovecote farm ,Saltmarsh,****,550 cr,4,07/01/2024,SUCCESS
+Q0003,HUNT DOWN BANDITS AT THE SUNKEN CHAPEL,Thornwood,2,620 cr,2,10/01/2024,SUCCESS
+0004,  Guard the road against bandits at the north watchtower ,Northern Wilds,2,670.00 cr,2 heroes,10/01/2024,success
+ Q0005 ,  Guard the road against goblins at Larkspur pass ,Northern Wilds,1/5,410.00 cr,1,2024-01-12,success
+ Q0006 ,Scout The Lair Of Wolves At Larkspur Pass,NORT,**,460,1,2024-01-14,Fled
+0007,  Drive off giant rats at the Fallow bridge ,Thornwood,**,130 cr,1 heroes,2024-01-16,FLED
+ Q0008 ,  Scout the lair of bandits at the north watchtower ,Greyfen,****,480,4 heroes,17/01/2024,success
+0009,SCOUT THE LAIR OF GOBLINS AT THE SALT ROAD,Thornwood,2/5,280 cr,3,2024-01-19,SUCCESS
+q0010,Rid The Mill Of Goblins At The Sunken Chapel,Thornwood,**,310,1 heroes,23/01/2024,success
+q0011,SCOUT THE LAIR OF GIANT SPIDERS AT LARKSPUR PASS,Ironhills,***,930,3 heroes,23/01/2024,SUCCESS
+Q0012,  Drive off bandits at the Fallow bridge ,Saltmarsh,***,440 cr,3 heroes,2024-01-26,SUCCESS
+0013,SCOUT THE LAIR OF BANDITS AT BRACKENFORD,Thornwood,4,560,3 heroes,26/01/2024,SUCCESS
+Q0014,Guard The Road Against Ghouls At Brackenford,Northern Wilds,3/5,950 cr,3 heroes,29/01/2024,fled
+0015,RID THE MILL OF WYRM AT CINDERHALL MINE,Northern Wilds,5/5,"4,540 cr",5,30/01/2024,failed
+0016,  Rid the mill of goblins at Cinderhall mine ,Saltmarsh,2/5,250,2,2024-02-01,failed
+Q0017,  Drive off bandits at the Fallow bridge ,Northern Wilds,3/5,710,4,03/02/2024,Success
+q0018,CLEAR WOLVES AT THE SALT ROAD,Thornwood,3/5,330 cr,2,05/02/2024,Failed
+ Q0019 ,  Scout the lair of wolves at the north watchtower ,Greyfen,3/5,260,3 heroes,07/02/2024,FLED
+ Q0020 ,  Hunt down goblins at the north watchtower ,Thornwood,3,280,3,09/02/2024,Success
+ Q0021 ,Clear Wolves At Cinderhall Mine,Saltmarsh,3,320.00 cr,3,2024-02-10,fled
+0022,  Hunt down goblins at Cinderhall mine ,Northern Wilds,3/5,410.00 cr,3,11/02/2024,SUCCESS
+Q0023,DRIVE OFF GHOULS AT CINDERHALL MINE,Ironhills,4/5,740,4,2024-02-15,success
+Q0024,  Drive off goblins at the north watchtower ,Thornwood,***,240 cr,3,2024-02-15,FLED
+Q0025,  Scout the lair of wyrm at Cinderhall mine ,Thornwood,*****,"2,420.00 cr",5 heroes,18/02/2024,FLED
+q0026,CLEAR GOBLINS AT CINDERHALL MINE,SALT,2,230.00 cr,2,18/02/2024,FAILED
+Q0027,HUNT DOWN WOLVES AT MOSSGROVE ORCHARD,Saltmarsh,**,350 cr,2,2024-02-21,success
+ Q0028 ,Clear Ghouls At The Fallow Bridge,Saltmarsh,****,560 cr,4,2024-02-24,Fled
+ Q0029 ,Scout The Lair Of Wolves At The Salt Road,Thornwood,***,380,3 heroes,25/02/2024,SUCCESS
+Q0030,  Drive off goblins at the old mill ,SALT,3/5,290 cr,2,27/02/2024,Fled
+0031,  Guard the road against bandits at the salt road ,Thornwood,***,430.00 cr,4,2024-02-27,SUCCESS
+0032,DRIVE OFF WOLVES AT THE NORTH WATCHTOWER,IRON,3/5,320.00 cr,3,02/03/2024,Fled
+Q0033,  Hunt down ghouls at Brackenford ,NORT,4/5,940.00 cr,4,02/03/2024,FLED
+Q0034,  Drive off goblins at the old mill ,Saltmarsh,3,240 cr,2,04/03/2024,SUCCESS
+q0035,Clear Giant Spiders At The Old Mill,Ironhills,3/5,840 cr,3 heroes,2024-03-07,SUCCESS
+ Q0036 ,Rid The Mill Of Ghouls At The Fallow Bridge,Northern Wilds,4,770.00 cr,4 heroes,2024-03-08,fled
+Q0037,  Scout the lair of giant rats at Larkspur pass ,Saltmarsh,**,110,3,09/03/2024,SUCCESS
+ Q0038 ,Clear Giant Rats At The Old Mill,NORT,2/5,170,3 heroes,2024-03-13,SUCCESS
+q0039,  Rid the mill of giant rats at the north watchtower ,Ironhills,1,160.00 cr,1,2024-03-15,Success
+0040,  Scout the lair of bandits at the north watchtower ,Greyfen,3/5,500,3 heroes,2024-03-17,SUCCESS
