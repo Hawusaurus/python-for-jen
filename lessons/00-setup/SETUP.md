@@ -65,8 +65,11 @@ git config --global user.email "you@example.com"
 ## 5. Get the course onto your computer
 
 In VS Code, press **Ctrl+Shift+P**, type **Git: Clone**, and paste the
-repository URL Lars gives you. Pick a folder, for example `Documents`.
-Sign in to GitHub when asked. When VS Code asks, open the cloned folder.
+repository URL Lars gives you. When it asks where to put it, make a new
+folder called `code` directly in `C:\Users\<your name>` and pick that.
+**Not Desktop and not Documents:** Windows backs those up to OneDrive, and
+OneDrive gets in Git's way. Sign in to GitHub when asked. When VS Code asks,
+open the cloned folder.
 
 Now switch to the lesson 00 branch. Open the terminal (**Terminal → New
 Terminal**) and run:
@@ -76,7 +79,8 @@ git checkout lesson-00
 ```
 
 Bottom left in VS Code it should now say `lesson-00` instead of `main`.
-You only see the `lessons` folder after this step.
+Nothing else changes: every lesson folder stays where it is. The branch is
+simply where your work for this lesson gets saved.
 
 ## 6. Start lesson 00
 
