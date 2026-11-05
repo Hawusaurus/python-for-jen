@@ -24,9 +24,9 @@ name = "Bram"
 hero_class = "Warrior"
 reward = 1000
 party = 3
-print("Welcome," + name + "!")
+print("Welcome, " + name + "!") # got to put a little space after the comma here!
 print("You have joined the guild as a " + hero_class + ".")
 print("Your first quest pays", reward, "crowns")
-print("Split", party, "ways, that is", reward // party, "crowns each")
+print("Split", party, "ways, that is", reward / party, "crowns each") #it had two /
 print("Paid when the monster is gone.")
 print("Biscuit says hello.")

@@ -26,7 +26,7 @@ mages = 16
 bards = 12
 everyone = warriors + rangers + mages + bards
 print("The guild roster, by class")
-print("Warriors:", "warriors")
+print("Warriors:", warriors) #had to take away some quotations!
 print("Rangers:", rangers)
 print("Mages:", mages)
 print("Bards:", bards)

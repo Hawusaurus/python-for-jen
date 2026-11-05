@@ -30,5 +30,5 @@ print("Rope per hero:", rope, "crowns")
 print("Lantern per hero:", lantern, "crowns")
 print("The mule, once:", mule, "crowns")
 print("Kit for one hero:", rope + lantern, "crowns")
-print("Kit for the party:", rope + lantern * heroes, "crowns")
+print("Kit for the party:", (rope + lantern) * heroes, "crowns") #needs brackets for bodmas!
 print("Everything:", (rope + lantern) * heroes + mule, "crowns")

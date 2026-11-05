@@ -19,19 +19,19 @@
 #   TEA TIME
 
 
-def greeting(name)
+def greeting(name):
     return "Hello, " + name + "! Welcome to the Guild."
-
+# well there's a colon on the script below so either there should or shouldn't be a colon...
 
 def raven_address(username):
-    domain = "thornmere.realm'
+    domain = "thornmere.realm"
     return username + "@" + domain
-
+# got some wrong quotation marks here!
 
 def shout(text):
-return text.upper()
-
-
+    return text.upper()
+# had to look this one up, apparently I need to make some indentations on line 32 so it knows stuff
+# i did a tab that it seems to like that
 print(greeting("Jen"))
 print(raven_address("jen"))
 print(shout("tea time"))
