@@ -27,7 +27,7 @@ guild_cut = 100
 print("The rat-catchers' sums")
 print("----------------------")
 print("Reward:", reward, "crowns")
-print("After the guild's cut:", reward - guild_cut, "crowns"
+print("After the guild's cut:", reward - guild_cut, "crowns") #oooh a missing bracket!
 print("Each hero gets", (reward - guild_cut) / heroes, "crowns")
 print("----------------------")
 print("Done.")

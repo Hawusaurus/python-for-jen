@@ -26,7 +26,7 @@ quartermistress = "Pell"
 captain = "Siv"
 dragon = "Biscuit"
 print("Welcome to", guild + "!")
-Print("Our new Keeper of the Guild Ledger is", keeper)
+print("Our new Keeper of the Guild Ledger is", keeper) # naughty capital letter!
 print("The stores are kept by", quartermistress + ", the Quartermistress")
 print("Quests are handed out by Captain", captain)
 print("The dragon is called", dragon)
